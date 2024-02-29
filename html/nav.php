@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body tertiary">
+<nav class="navbar navbar-expand-lg navbar-light bg-light tertiary">
     <div class="container-fluid">
         <a class="navbar-brand">
             <img src="/images/Wing.png" width="60" height="60" class="d-inline block align-text-top"/>
