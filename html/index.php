@@ -9,6 +9,23 @@
     </head>
     <body>
         <?php require("nav.php"); ?>
+        <div class="container">
+            <h6>Ground Teams</h6>
+            <table>
+                <tr>
+                    <th>Sortie #</th>
+                    <th>Name</th>
+                    <th>COV</th>
+                    <th>Driver</th>
+                    <th>GTL</th>
+                    <th>Passengers</th>
+                    <th>Status</th>
+                    <th>Location</th>
+                    <th>Checkin</th>
+                    <th>Action</th>
+                </tr>
+            </table>
+        </div>
         <script src="/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
 </html>
