@@ -17,7 +17,7 @@ require_once("objects/ground_teams.php");
         <?php require("nav.php"); ?>
         <div class="container">
             <h6>Ground Teams</h6>
-            <table>
+            <table style="text-align:center;">
                 <tr>
                     <th>Sortie #</th>
                     <th>Name</th>
