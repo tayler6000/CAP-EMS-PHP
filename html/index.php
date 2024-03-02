@@ -2,6 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+require_once("objects/ground_teams.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,18 +38,19 @@ error_reporting(E_ALL);
                 if($result === False){
                     print($conn->error);
                 }
-                while $row = mysqli_fetch_assoc($result){
+                while($row = mysqli_fetch_assoc($result)){
+                    $team = new GroundTeam($row["sortie"]);
                     print("<tr>");
-                    print("<th>".$row->sortie."</th>");
-                    print("<td>Name</td>");
-                    print("<td>COV</td>");
-                    print("<td>Driver</td>");
-                    print("<td>GTL</td>");
-                    print("<td>Passengers</td>");
-                    print("<td>Status</td>");
-                    print("<td>Location</td>");
-                    print("<td>Checkin</td>");
-                    print("<td>Action</td>");
+                    print("<td>".$team->sortie."</td>");
+                    print("<td>".$team->name."</td>");
+                    print("<td>".$team->cov."</td>");
+                    print("<td>".$team->driver."</td>");
+                    print("<td>".$team->leader."</td>");
+                    print("<td>".$team->passengers."</td>");
+                    print("<td>".$team->status."</td>");
+                    print("<td>".$team->location."</td>");
+                    print("<td>".$team->checkin."</td>");
+                    print("<td><button>Action</button></td>");
                     print("</tr>");
                 }
                 ?>
