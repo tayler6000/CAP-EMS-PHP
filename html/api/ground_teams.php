@@ -3,7 +3,8 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
     require_once("../objects/ground_teams.php");
-    $late_offset = 30 * 60;
+    $late_offset = 35 * 60;
+    $warning_offset = 30 * 60;
 ?>
 <table style="text-align:center;">
     <tr>
@@ -31,6 +32,8 @@
             print("<tr");
             if((time() - $late_offset) > $team->checkin){
                 print(" style='background-color: red;color: white;'");
+            }elseif((time() - $warning_offset) > $team->checkin){
+                print(" style='background-color: orange;color: white;'");
             }
             print(">");
             print("<td>".$team->sortie."</td>");
