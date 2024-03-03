@@ -36,7 +36,7 @@
             print("<td>".$team->passengers."</td>");
             print("<td>".$team->status."</td>");
             print("<td>".$team->location."</td>");
-            print("<td>".date("d M y Hm e", $team->checkin)."</td>");
+            print("<td>".date("d M y Hi e", $team->checkin)."</td>");
             print("<td><button>Action</button></td>");
             print("</tr>");
         }
