@@ -8,15 +8,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <?php /*
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Map</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/getMembers">Members</a>
-                </li>
-                */
-                ?>
                 <li class="nav-item">
                     <a class="nav-link" href="/">Status Board</a>
                 </li>

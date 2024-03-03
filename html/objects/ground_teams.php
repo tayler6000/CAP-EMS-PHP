@@ -8,7 +8,7 @@
         public int $passengers;
         public string $status;
         public string $location;
-        public string $checkin;
+        public int $checkin;
 
         public function __construct(int $id){
             $conn = mysqli_connect("localhost", getenv("DB_USER"), getenv("DB_PASS"), getenv("DB_USER"));
