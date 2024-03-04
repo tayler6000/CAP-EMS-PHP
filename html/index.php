@@ -42,7 +42,7 @@
                                 <input name="id" id="gid" hidden />
                                 <table style="border:0px;">
                                     <tr>
-                                        <td style="border:0px;"><label for="gName">Name:</label></td>
+                                        <td style="border:0px;"><label for="gName">Tasking:</label></td>
                                         <td style="border:0px;"><input id="gName" name="name" autocomplete="off" required/></td>
                                     </tr>
                                     <tr>
@@ -110,7 +110,7 @@
                                         <td style="border:0px;"><input type="number" min="1" id="ngSortie" name="sortie" required/></td>
                                     </tr>
                                     <tr>
-                                        <td style="border:0px;"><label for="ngName">Name:</label></td>
+                                        <td style="border:0px;"><label for="ngName">Tasking:</label></td>
                                         <td style="border:0px;"><input id="ngName" name="name" autocomplete="off" required/></td>
                                     </tr>
                                     <tr>

@@ -10,7 +10,7 @@
     <tr>
         <th>Mission #</th>
         <th>Sortie #</th>
-        <th>Name</th>
+        <th>Tasking</th>
         <th>COV</th>
         <th>Driver</th>
         <th>GTL</th>
