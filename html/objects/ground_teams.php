@@ -1,5 +1,6 @@
 <?php
     class GroundTeam {
+        public int $id;
         public string $mission;
         public int $sortie;
         public string $name;
@@ -13,7 +14,7 @@
 
         public function __construct(int $id){
             $conn = mysqli_connect("localhost", getenv("DB_USER"), getenv("DB_PASS"), getenv("DB_USER"));
-            $stmt = $conn->prepare("SELECT * FROM `deployed_ground` WHERE `sortie`=?");
+            $stmt = $conn->prepare("SELECT * FROM `deployed_ground` WHERE `id`=?");
             $stmt->bind_param("i", $id);
             $stmt->execute();
             $result = $stmt->get_result();
@@ -21,6 +22,7 @@
                 print($conn->error);
             }
             $row = mysqli_fetch_assoc($result);
+            $this->id = $row["id"];
             $this->mission = $row["mission"];
             $this->sortie = $row["sortie"];
             $this->name = $row["name"];

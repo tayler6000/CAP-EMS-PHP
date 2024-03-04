@@ -31,7 +31,7 @@
             print($conn->error);
         }
         while($row = mysqli_fetch_assoc($result)){
-            $team = new GroundTeam($row["sortie"]);
+            $team = new GroundTeam($row["id"]);
             if($team->status === "Completed" or $team->status === "Cancelled") {
                 if((time() - $warning_offset) > $team->checkin){
                     continue;
