@@ -59,5 +59,5 @@ if($result->num_rows == 0){
     die(json_encode(array("error"=>"Unable to create Sortie", "code"=>5)));
 }
 $row = mysqli_fetch_assoc($result);
-header("Location:/?type=ground&id=".$row["id"]);
+header("Location:/");
 ?>
