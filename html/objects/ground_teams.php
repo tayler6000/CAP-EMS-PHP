@@ -1,6 +1,6 @@
 <?php
     class GroundTeam {
-        public int $mission;
+        public string $mission;
         public int $sortie;
         public string $name;
         public string $cov;
