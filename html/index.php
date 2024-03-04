@@ -30,22 +30,45 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <label>Name: <input id="gName" name="name" /></label><br/>
-                                <label>COV: <input id="gCOV" name="cov" /></label><br/>
-                                <label>Driver: <input id="gDriver" name="driver" /></label><br/>
-                                <label>GTL: <input id="gLeader" name="leader" /></label><br/>
-                                <label>Passengers: <input type="number" min="4" id="gPassengers" name="passengers" /></label><br/>
-                                <label>
-                                    Status: <select id="gStatus" name="status">
-                                        <option value="Initiating">Initiating</option>
-                                        <option value="Tasked">Tasked</option>
-                                        <option value="Briefing">Briefing</option>
-                                        <option value="In Progress">In Progress</option>
-                                        <option value="Completed">Completed</option>
-                                        <option value="Cancelled">Cancelled</option>
-                                    </select>
-                                </label><br/>
-                                <label>Location: <input id="gLocation" name="location" /></label><br/>
+                                <table style="border:0px;">
+                                    <tr>
+                                        <td><label for="gName">Name:</label></td>
+                                        <td><input id="gName" name="name" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="gCOV">COV:</lable></td>
+                                        <td><input id="gCOV" name="cov" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="gDriver">Driver:</lable></td>
+                                        <td><input id="gDriver" name="driver" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="gLeader">GTL:</lable></td>
+                                        <td><input id="gLeader" name="leader" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="gPassengers">Passengers:</lable></td>
+                                        <td><input type="number" min="4" id="gPassengers" name="passengers" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="gStatus">Status</label></td>
+                                        <td>
+                                            <select id="gStatus" name="status">
+                                                <option value="Initiating">Initiating</option>
+                                                <option value="Tasked">Tasked</option>
+                                                <option value="Briefing">Briefing</option>
+                                                <option value="In Progress">In Progress</option>
+                                                <option value="Completed">Completed</option>
+                                                <option value="Cancelled">Cancelled</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="gLocation">Location:</label></td>
+                                        <td><input id="gLocation" name="location" /></td>
+                                    </tr>
+                                </table>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
