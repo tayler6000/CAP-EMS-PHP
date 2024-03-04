@@ -44,7 +44,7 @@
                     print("Driver: ".$team->driver."<br />");
                     print("GTL: ".$team->leader."<br />");
                     print("Passengers: ".$team->passengers."<br />");
-                    print("Status: ".$team->name."<br />");
+                    print("Status: ".$team->status."<br />");
                     print("Location: ".$team->location."<br />");
                     print("Checkin: ".date("d M y Hi e", $team->checkin)."<br />");
                     print("<br /><h6>Audit Trail:</h6><hr />");

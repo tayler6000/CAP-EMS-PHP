@@ -48,7 +48,7 @@ $entry = "Updated Sortie (Database ID ".$id.")\n".
 "Driver: ".$team->driver."\n".
 "GTL: ".$team->leader."\n".
 "Passengers: ".$team->passengers."\n".
-"Status: ".$team->name."\n".
+"Status: ".$team->status."\n".
 "Location: ".$team->location;
 $stmt->bind_param("is", $id, $entry);
 $stmt->execute();
