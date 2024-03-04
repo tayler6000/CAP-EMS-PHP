@@ -19,7 +19,7 @@ $name = $_POST["name"];
 $cov = $_POST["cov"];
 $driver = $_POST["driver"];
 $leader = $_POST["leader"];
-$passengers = $_POST["passengers"];
+$passengers = (int)$_POST["passengers"];
 $status = $_POST["status"];
 $location = $_POST["location"];
 
@@ -29,9 +29,9 @@ $stmt = $conn->prepare("UPDATE `deployed_ground` SET `name`=?, `cov`=?, `driver`
 $stmt->bind_param("ssssissi", $name, $cov, $driver, $leader, $passengers, $status, $location, $id);
 $stmt->execute();
 $result = $stmt->get_result();
-if($result === False){
+if($conn->error){
     http_response_code(500);
-    die($conn->error);
+    die(json_encode(array("error"=>$conn->error)));
 }
 header("Location:/");
 ?>
