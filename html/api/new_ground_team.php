@@ -10,7 +10,7 @@ if(!isset($_POST["mission"]) or empty($_POST["mission"]) or
     http_response_code(404);
     die();
 }
-$mission = $_POST["mission"];
+$mission = strtoupper($_POST["mission"]);
 $name = $_POST["name"];
 $sortie = (int)$_POST["sortie"];
 $location = $_POST["location"];

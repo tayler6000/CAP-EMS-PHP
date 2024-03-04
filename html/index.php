@@ -105,7 +105,7 @@
                                     </tr>
                                     <tr>
                                         <td style="border:0px;"><label for="ngSortie">Sortie #:</lable></td>
-                                        <td style="border:0px;"><input type="number" min="4" id="ngSortie" name="sortie" /></td>
+                                        <td style="border:0px;"><input type="number" min="1" id="ngSortie" name="sortie" /></td>
                                     </tr>
                                     <tr>
                                         <td style="border:0px;"><label for="ngName">Name:</label></td>
