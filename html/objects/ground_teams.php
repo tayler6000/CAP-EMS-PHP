@@ -1,5 +1,6 @@
 <?php
     class GroundTeam {
+        public int $mission;
         public int $sortie;
         public string $name;
         public string $cov;
@@ -20,6 +21,7 @@
                 print($conn->error);
             }
             $row = mysqli_fetch_assoc($result);
+            $this->mission = $row["mission"];
             $this->sortie = $row["sortie"];
             $this->name = $row["name"];
             $this->cov = $row["cov"];

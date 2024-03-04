@@ -8,6 +8,7 @@
 ?>
 <table style="text-align:center;">
     <tr>
+        <th>Mission #</th>
         <th>Sortie #</th>
         <th>Name</th>
         <th>COV</th>
@@ -36,6 +37,7 @@
                 print(" style='background-color: orange;color: white;'");
             }
             print(">");
+            print("<td>".$team->mission."</td>");
             print("<td>".$team->sortie."</td>");
             print("<td>".$team->name."</td>");
             print("<td>".$team->cov."</td>");
