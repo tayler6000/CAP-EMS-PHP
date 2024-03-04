@@ -33,8 +33,8 @@
                 if($type == "ground"){
                     $team = new GroundTeam($id);
                     print("<h2>Mission ".$team->mission." Ground Sortie ".$team->sortie."</h2>");
-                    print('<a href="/?type=ground&id='.$id.'" class="btn btn-primary">Edit Sortie</a>');
-                    print("<h6>Current Entry</h6>");
+                    print('<a href="/?type=ground&id='.$id.'" class="btn btn-primary">Edit Sortie</a><br>');
+                    print("<h6>Current Entry:</h6>");
                     print("Mission: ".$team->mission."<br />");
                     print("Sortie: ".$team->sortie."<br />");
                     print("Tasking: ".$team->name."<br />");
@@ -44,7 +44,8 @@
                     print("Passengers: ".$team->passengers."<br />");
                     print("Status: ".$team->name."<br />");
                     print("Location: ".$team->location."<br />");
-                    print("Checkin:".date("d M y Hi e", $team->checkin)."<hr />");
+                    print("Checkin: ".date("d M y Hi e", $team->checkin)."<br />");
+                    print("<br /><h6>Audit Trail:</h6><hr />");
                     $conn = mysqli_connect("localhost", getenv("DB_USER"), getenv("DB_PASS"), getenv("DB_USER"));
                     $stmt = $conn->prepare('SELECT * FROM `audit` WHERE `sortie_type`="ground" AND `sortie_id`=?');
                     $stmt->bind_param("i", $id);
