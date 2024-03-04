@@ -133,7 +133,9 @@
             update("/api/ground_teams.php", document.getElementById("ground_teams"));
             setInterval(update, 1000, "/api/time.php", document.getElementById("time"));
             setInterval(update, 1500, "/api/ground_teams.php", document.getElementById("ground_teams"));
-
+        </script>
+        <script src="/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script>
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
             if(urlParams.has("type") && urlParams.has("id")){
@@ -142,6 +144,5 @@
                 }
             }
         </script>
-        <script src="/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
 </html>
