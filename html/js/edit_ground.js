@@ -1,3 +1,4 @@
 function editGroundTeam(){
-    document.getElementById("groundModal").show()
+    const modal = new bootstrap.Modal(document.getElementById("groundModal"), {keyboard: false});
+    modal.show();
 }
