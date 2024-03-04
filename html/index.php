@@ -32,28 +32,28 @@
                             <div class="modal-body">
                                 <table style="border:0px;">
                                     <tr>
-                                        <td><label for="gName">Name:</label></td>
-                                        <td><input id="gName" name="name" /></td>
+                                        <td style="border:0px;"><label for="gName">Name:</label></td>
+                                        <td style="border:0px;"><input id="gName" name="name" /></td>
                                     </tr>
                                     <tr>
-                                        <td><label for="gCOV">COV:</lable></td>
-                                        <td><input id="gCOV" name="cov" /></td>
+                                        <td style="border:0px;"><label for="gCOV">COV:</lable></td>
+                                        <td style="border:0px;"><input id="gCOV" name="cov" /></td>
                                     </tr>
                                     <tr>
-                                        <td><label for="gDriver">Driver:</lable></td>
-                                        <td><input id="gDriver" name="driver" /></td>
+                                        <td style="border:0px;"><label for="gDriver">Driver:</lable></td>
+                                        <td style="border:0px;"><input id="gDriver" name="driver" /></td>
                                     </tr>
                                     <tr>
-                                        <td><label for="gLeader">GTL:</lable></td>
-                                        <td><input id="gLeader" name="leader" /></td>
+                                        <td style="border:0px;"><label for="gLeader">GTL:</lable></td>
+                                        <td style="border:0px;"><input id="gLeader" name="leader" /></td>
                                     </tr>
                                     <tr>
-                                        <td><label for="gPassengers">Passengers:</lable></td>
-                                        <td><input type="number" min="4" id="gPassengers" name="passengers" /></td>
+                                        <td style="border:0px;"><label for="gPassengers">Passengers:</lable></td>
+                                        <td style="border:0px;"><input type="number" min="4" id="gPassengers" name="passengers" /></td>
                                     </tr>
                                     <tr>
-                                        <td><label for="gStatus">Status</label></td>
-                                        <td>
+                                        <td style="border:0px;"><label for="gStatus">Status</label></td>
+                                        <td style="border:0px;">
                                             <select id="gStatus" name="status">
                                                 <option value="Initiating">Initiating</option>
                                                 <option value="Tasked">Tasked</option>
@@ -65,8 +65,8 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><label for="gLocation">Location:</label></td>
-                                        <td><input id="gLocation" name="location" /></td>
+                                        <td style="border:0px;"><label for="gLocation">Location:</label></td>
+                                        <td style="border:0px;"><input id="gLocation" name="location" /></td>
                                     </tr>
                                 </table>
                             </div>
