@@ -28,6 +28,7 @@ $stmt = $conn->prepare("UPDATE `deployed_ground` SET `name`=?, `cov`=?, `driver`
 "`leader`=?, `passengers`=?, `status`=?, `location`=?, `checkin`=UNIX_TIMESTAMP() WHERE `id`=?");
 $stmt->bind_param("ssssissi", $name, $cov, $driver, $leader, $passengers, $status, $location, $id);
 $stmt->execute();
+$result = $stmt->get_result();
 if($result === False){
     http_response_code(500);
     die($conn->error);
