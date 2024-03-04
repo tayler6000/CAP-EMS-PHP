@@ -69,6 +69,8 @@
                                                 <option value="Tasked">Tasked</option>
                                                 <option value="Briefing">Briefing</option>
                                                 <option value="In Progress">In Progress</option>
+                                                <option value="RTB">RTB</option>
+                                                <option value="Debriefing">Debriefing</option>
                                                 <option value="Completed">Completed</option>
                                                 <option value="Cancelled">Cancelled</option>
                                             </select>
