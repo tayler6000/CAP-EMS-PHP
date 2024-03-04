@@ -38,7 +38,7 @@ $stmt = $conn->prepare("INSERT INTO `deployed_ground` ".
 $stmt->bind_param("siss", $mission, $sortie, $name, $location);
 $stmt->execute();
 $result = $stmt->get_result();
-if($result === False){
+if($conn->error){
     http_response_code(500);
     die(json_encode(array("error"=>$conn->error, "code"=>3)));
 }
