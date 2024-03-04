@@ -67,7 +67,7 @@ $entry = "Created Sortie (Database ID ".$row["id"].")\n".
 "\n".
 "Mission: ".$mission."\n".
 "Sortie: ".$sortie."\n".
-"Taskng: ".$tasking."\n".
+"Tasking: ".$name."\n".
 "Location: ".$location;
 $stmt->bind_param("is", $row["id"], $entry);
 $stmt->execute();
