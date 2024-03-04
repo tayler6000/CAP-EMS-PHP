@@ -9,7 +9,7 @@ function editGroundTeam(id){
     const status = document.getElementById("gStatus");
     const location = document.getElementById("gLocation");
 
-    const index_map = {'Initiating': 0, 'Tasked': 1, 'Briefing': 2, 'In Progress': 3, 'RTB': 4, 'Debriefing', 'Completed': 6, 'Cancelled': 7};
+    const index_map = {'Initiating': 0, 'Tasked': 1, 'Briefing': 2, 'In Progress': 3, 'RTB': 4, 'Debriefing': 5, 'Completed': 6, 'Cancelled': 7};
 
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
