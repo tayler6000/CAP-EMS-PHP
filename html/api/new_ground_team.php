@@ -7,7 +7,7 @@ if(!isset($_POST["mission"]) or empty($_POST["mission"]) or
    !isset($_POST["name"]) or empty($_POST["name"]) or
    !isset($_POST["sortie"]) or empty($_POST["sortie"]) or
    !isset($_POST["location"]) or empty($_POST["location"])){
-    http_response_code(404);
+    http_response_code(400);
     die();
 }
 $mission = strtoupper($_POST["mission"]);
@@ -22,13 +22,13 @@ $stmt->execute();
 $result = $stmt->get_result();
 if($result === False){
     http_response_code(500);
-    die(json_encode(array("error"=>$conn->error)));
+    die(json_encode(array("error"=>$conn->error, "code"=>1)));
 }
 if($result->num_rows > 0){
     $row = mysqli_fetch_assoc($result);
     http_response_code(409);
     header("Location:/?type=ground&id=".$row["id"]);
-    die(json_encode(array("error"=>"Sortie already exists")));
+    die(json_encode(array("error"=>"Sortie already exists", "code"=>2)));
 }
 $stmt->close();
 
@@ -40,7 +40,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 if($result === False){
     http_response_code(500);
-    die(json_encode(array("error"=>$conn->error)));
+    die(json_encode(array("error"=>$conn->error, "code"=>3)));
 }
 $stmt->close();
 
@@ -50,12 +50,12 @@ $stmt->execute();
 $result = $stmt->get_result();
 if($result === False){
     http_response_code(500);
-    die(json_encode(array("error"=>$conn->error)));
+    die(json_encode(array("error"=>$conn->error, "code"=>4)));
 }
 if($result->num_rows == 0){
     http_response_code(500);
     header("Location:/");
-    die(json_encode(array("error"=>"Unable to create Sortie")));
+    die(json_encode(array("error"=>"Unable to create Sortie", "code"=>5)));
 }
 $row = mysqli_fetch_assoc($result);
 header("Location:/?type=ground&id=".$row["id"]);
