@@ -31,7 +31,9 @@
         while($row = mysqli_fetch_assoc($result)){
             $team = new GroundTeam($row["sortie"]);
             print("<tr");
-            if((time() - $late_offset) > $team->checkin){
+            if($team->status === "Completed" or $team->status === "Cancelled") {
+                print(" style='background-color: lightgray;'");
+            }elseif((time() - $late_offset) > $team->checkin){
                 print(" style='background-color: red;color: white;'");
             }elseif((time() - $warning_offset) > $team->checkin){
                 print(" style='background-color: orange;color: white;'");
