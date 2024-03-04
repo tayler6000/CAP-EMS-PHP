@@ -1,21 +1,21 @@
 <?php
-if(!isset($_GET["id"]) or empty($_GET["id"]) or
-   !isset($_GET["name"]) or empty($_GET["name"]) or
-   !isset($_GET["cov"]) or empty($_GET["cov"]) or
-   !isset($_GET["driver"]) or empty($_GET["driver"]) or
-   !isset($_GET["leader"]) or empty($_GET["leader"]) or
-   !isset($_GET["status"]) or empty($_GET["status"]) or
-   !isset($_GET["location"]) or empty($_GET["location"])){
+if(!isset($_POST["id"]) or empty($_POST["id"]) or
+   !isset($_POST["name"]) or empty($_POST["name"]) or
+   !isset($_POST["cov"]) or empty($_POST["cov"]) or
+   !isset($_POST["driver"]) or empty($_POST["driver"]) or
+   !isset($_POST["leader"]) or empty($_POST["leader"]) or
+   !isset($_POST["status"]) or empty($_POST["status"]) or
+   !isset($_POST["location"]) or empty($_POST["location"])){
     http_response_code(404);
     die();
 }
-$id = $_GET["id"];
-$name = $_GET["name"];
-$cov = $_GET["cov"];
-$driver = $_GET["driver"];
-$leader = $_GET["leader"];
-$status = $_GET["status"];
-$location = $_GET["location"];
+$id = $_POST["id"];
+$name = $_POST["name"];
+$cov = $_POST["cov"];
+$driver = $_POST["driver"];
+$leader = $_POST["leader"];
+$status = $_POST["status"];
+$location = $_POST["location"];
 
 $conn = mysqli_connect("localhost", getenv("DB_USER"), getenv("DB_PASS"), getenv("DB_USER"));
 $stmt = $conn->prepare("UPDATE `deployed_ground` SET `name`=?, `cov`=?, `driver`=?, ".
