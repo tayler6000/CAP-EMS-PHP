@@ -81,6 +81,8 @@
             </div>
         </div>
         <script>
+            update("/api/time.php", document.getElementById("time"));
+            update("/api/ground_teams.php", document.getElementById("ground_teams"));
             setInterval(update, 1000, "/api/time.php", document.getElementById("time"));
             setInterval(update, 1500, "/api/ground_teams.php", document.getElementById("ground_teams"));
         </script>
