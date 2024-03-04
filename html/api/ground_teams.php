@@ -55,7 +55,8 @@
             print("<td>".$team->status."</td>");
             print("<td>".$team->location."</td>");
             print("<td>".date("d M y Hi e", $team->checkin)."</td>");
-            print("<td><button type='button' class='btn btn-secondary'>Action</button></td>");
+            print("<td><button type='button' class='btn btn-secondary'".
+            "onclick='javascript:editGroundTeam()'>Action</button></td>");
             print("</tr>");
         }
         if($late_alarm) {
