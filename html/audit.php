@@ -47,6 +47,7 @@
                     print("Checkin:".date("d M y Hi e", $team->checkin)."<hr />");
                     $conn = mysqli_connect("localhost", getenv("DB_USER"), getenv("DB_PASS"), getenv("DB_USER"));
                     $stmt = $conn->prepare('SELECT * FROM `audit` WHERE `sortie_type`="ground" AND `sortie_id`=?');
+                    $stmt->bind_param("i", $id);
                     $stmt->execute();
                     $result = $stmt->get_result();
                     if($result === False){
