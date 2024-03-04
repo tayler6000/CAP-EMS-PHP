@@ -20,12 +20,13 @@
             <p id="time"></p>
             <div class="row">
                 <div class="col-md">
-                    <h6>Ground Teams</h6>
+                    <strong style="vertical-align:middle;">Ground Teams</strong>
                 </div>
                 <div class="col-md" style="text-align:right;">
                     <button type="button" class="btn btn-primary">New Ground Team</button>
                 </div>
             </div>
+            <br/>
             <div id="ground_teams"></div>
             <!-- Ground Modal -->
             <div class="modal fade" id="groundModal" tabindex="-1" aria-labelledby="groundModalLabel" aria-hidden="true">
