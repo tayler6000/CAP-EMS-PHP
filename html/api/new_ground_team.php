@@ -8,6 +8,7 @@ if(!isset($_POST["mission"]) or empty($_POST["mission"]) or
    !isset($_POST["sortie"]) or empty($_POST["sortie"]) or
    !isset($_POST["location"]) or empty($_POST["location"])){
     http_response_code(400);
+    header("Location:/");
     die();
 }
 $mission = strtoupper($_POST["mission"]);

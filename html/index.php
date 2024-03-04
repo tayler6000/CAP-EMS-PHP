@@ -101,19 +101,19 @@
                                 <table style="border:0px;">
                                     <tr>
                                         <td style="border:0px;"><label for="ngMission">Mission #:</lable></td>
-                                        <td style="border:0px;"><input id="ngMission" name="mission" /></td>
+                                        <td style="border:0px;"><input id="ngMission" name="mission" required/></td>
                                     </tr>
                                     <tr>
                                         <td style="border:0px;"><label for="ngSortie">Sortie #:</lable></td>
-                                        <td style="border:0px;"><input type="number" min="1" id="ngSortie" name="sortie" /></td>
+                                        <td style="border:0px;"><input type="number" min="1" id="ngSortie" name="sortie" required/></td>
                                     </tr>
                                     <tr>
                                         <td style="border:0px;"><label for="ngName">Name:</label></td>
-                                        <td style="border:0px;"><input id="ngName" name="name" autocomplete="off"/></td>
+                                        <td style="border:0px;"><input id="ngName" name="name" autocomplete="off" required/></td>
                                     </tr>
                                     <tr>
                                         <td style="border:0px;"><label for="ngLocation">Location:</label></td>
-                                        <td style="border:0px;"><input id="ngLocation" name="location" /></td>
+                                        <td style="border:0px;"><input id="ngLocation" name="location" required/></td>
                                     </tr>
                                 </table>
                             </div>
