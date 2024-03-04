@@ -24,6 +24,13 @@ function editGroundTeam(id){
         status.getElementsByTagName("option")[index_map[object.status]].selected = "selected";
         location.value = object.location;
     }
+    xhttp.onerror = function(error) {
+        console.error(error);
+    }
+    xhttp.ontimeout = function(){
+        editGroundTeam(id);
+    }
+    xhttp.timeout = 1000;
     xhttp.open("GET", "/api/get_ground_team_json.php?id=" + id, true);
     xhttp.send();
     const modal = new bootstrap.Modal(document.getElementById("groundModal"), {keyboard: false});
