@@ -23,7 +23,7 @@
                     <strong style="vertical-align:middle;">Ground Sorties</strong>
                 </div>
                 <div class="col-md" style="text-align:right;">
-                    <button style="margin-bottom:10px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#newGroundModal">
+                    <button style="margin-bottom:10px;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newGroundModal">
                         New Ground Sortie
                     </button>
                 </div>
