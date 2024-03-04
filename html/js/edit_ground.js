@@ -1,5 +1,5 @@
 function editGroundTeam(id){
-    const id_field = document.getElementById("gName");
+    const id_field = document.getElementById("gid");
     const title = document.getElementById("groundModalLabel");
     const name = document.getElementById("gName");
     const cov = document.getElementById("gCOV");
