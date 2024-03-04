@@ -2,6 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+require_once("../objects/ground_teams.php");
 
 if(!isset($_POST["id"]) or empty($_POST["id"]) or
    !isset($_POST["name"]) or empty($_POST["name"]) or
@@ -33,5 +34,29 @@ if($conn->error){
     http_response_code(500);
     die(json_encode(array("error"=>$conn->error)));
 }
+
+// Audit Log
+$team = new GroundTeam($id);
+$stmt = $conn->prepare("INSERT INTO `audit` (`sortie_type`, `sortie_id`, `entry`, `timestamp`) VALUES".
+'("ground", ?, ?, UNIX_TIMESTAMP())');
+$entry = "Updated Sortie (Database ID ".$id.")\n".
+"\n".
+"Mission: ".$team->mission."\n".
+"Sortie: ".$team->sortie."\n".
+"Tasking: ".$team->name."\n".
+"COV: ".$team->cov."\n".
+"Driver: ".$team->driver."\n".
+"GTL: ".$team->leader."\n".
+"Passengers: ".$team->passengers."\n".
+"Status: ".$team->status."\n".
+"Location: ".$team->location;
+$stmt->bind_param("is", $id, $entry);
+$stmt->execute();
+$result = $stmt->get_result();
+if($conn->error){
+    http_response_code(500);
+    die(json_encode(array("error"=>$conn->error, "code"=>5)));
+}
+$stmt->close();
 header("Location:/");
 ?>

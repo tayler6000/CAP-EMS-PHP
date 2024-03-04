@@ -34,7 +34,7 @@ if($result->num_rows > 0){
 $stmt->close();
 
 $stmt = $conn->prepare("INSERT INTO `deployed_ground` ".
-"(`mission`, `sortie`, `name`, `status`, `location`, checkin) VALUES ".
+"(`mission`, `sortie`, `name`, `status`, `location`, `checkin`) VALUES ".
 '(?, ?, ?, "Initiating", ?, UNIX_TIMESTAMP())');
 $stmt->bind_param("siss", $mission, $sortie, $name, $location);
 $stmt->execute();
@@ -59,5 +59,24 @@ if($result->num_rows == 0){
     die(json_encode(array("error"=>"Unable to create Sortie", "code"=>5)));
 }
 $row = mysqli_fetch_assoc($result);
+
+// Audit Log
+$stmt = $conn->prepare("INSERT INTO `audit` (`sortie_type`, `sortie_id`, `entry`, `timestamp`) VALUES".
+'("ground", ?, ?, UNIX_TIMESTAMP())');
+$entry = "Created Sortie (Database ID ".$row["id"].")\n".
+"\n".
+"Mission: ".$mission."\n".
+"Sortie: ".$sortie."\n".
+"Tasking: ".$name."\n".
+"Location: ".$location;
+$stmt->bind_param("is", $row["id"], $entry);
+$stmt->execute();
+$result = $stmt->get_result();
+if($conn->error){
+    http_response_code(500);
+    die(json_encode(array("error"=>$conn->error, "code"=>5)));
+}
+$stmt->close();
+
 header("Location:/");
 ?>
