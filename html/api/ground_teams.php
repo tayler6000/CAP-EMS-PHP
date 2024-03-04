@@ -21,6 +21,7 @@
         <th>Action</th>
     </tr>
     <?php
+        $late_alarm = False;
         $conn = mysqli_connect("localhost", getenv("DB_USER"), getenv("DB_PASS"), getenv("DB_USER"));
         $stmt = $conn->prepare('SELECT * FROM `deployed_ground` WHERE `status` != "Completed" AND `status` != "Cancelled"
         UNION SELECT * FROM `deployed_ground` WHERE `status` = "Completed" OR `status` = "Cancelled"');
@@ -38,6 +39,7 @@
                 print("<tr style='background-color: lightgray;'>");
             }elseif((time() - $late_offset) > $team->checkin){
                 print("<tr style='background-color: red;color: white;'>");
+                $late_alarm = True;
             }elseif((time() - $warning_offset) > $team->checkin){
                 print("<tr style='background-color: orange;color: white;'>");
             }else{
@@ -55,6 +57,9 @@
             print("<td>".date("d M y Hi e", $team->checkin)."</td>");
             print("<td><button>Action</button></td>");
             print("</tr>");
+        }
+        if($late_alarm) {
+            require("alert.php");
         }
     ?>
 </table>
