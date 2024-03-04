@@ -28,7 +28,7 @@ if($result->num_rows > 0){
     $row = mysqli_fetch_assoc($result);
     http_response_code(409);
     header("Location:/?type=ground&id=".$row["id"]);
-    die(json_encode(array("error"=>"Sortie already exists"));
+    die(json_encode(array("error"=>"Sortie already exists")));
 }
 $stmt->close();
 
@@ -55,7 +55,7 @@ if($result === False){
 if($result->num_rows == 0){
     http_response_code(500);
     header("Location:/");
-    die(json_encode(array("error"=>"Unable to create Sortie"));
+    die(json_encode(array("error"=>"Unable to create Sortie")));
 }
 $row = mysqli_fetch_assoc($result);
 header("Location:/?type=ground&id=".$row["id"]);
