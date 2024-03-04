@@ -43,23 +43,23 @@
                                 <table style="border:0px;">
                                     <tr>
                                         <td style="border:0px;"><label for="gName">Name:</label></td>
-                                        <td style="border:0px;"><input id="gName" name="name" autocomplete="off"/></td>
+                                        <td style="border:0px;"><input id="gName" name="name" autocomplete="off" required/></td>
                                     </tr>
                                     <tr>
                                         <td style="border:0px;"><label for="gCOV">COV:</lable></td>
-                                        <td style="border:0px;"><input id="gCOV" name="cov" /></td>
+                                        <td style="border:0px;"><input id="gCOV" name="cov" required/></td>
                                     </tr>
                                     <tr>
                                         <td style="border:0px;"><label for="gDriver">Driver:</lable></td>
-                                        <td style="border:0px;"><input id="gDriver" name="driver" /></td>
+                                        <td style="border:0px;"><input id="gDriver" name="driver" required/></td>
                                     </tr>
                                     <tr>
                                         <td style="border:0px;"><label for="gLeader">GTL:</lable></td>
-                                        <td style="border:0px;"><input id="gLeader" name="leader" /></td>
+                                        <td style="border:0px;"><input id="gLeader" name="leader" required/></td>
                                     </tr>
                                     <tr>
                                         <td style="border:0px;"><label for="gPassengers">Passengers:</lable></td>
-                                        <td style="border:0px;"><input type="number" min="4" id="gPassengers" name="passengers" /></td>
+                                        <td style="border:0px;"><input type="number" min="0" id="gPassengers" name="passengers" required/></td>
                                     </tr>
                                     <tr>
                                         <td style="border:0px;"><label for="gStatus">Status</label></td>
@@ -76,7 +76,7 @@
                                     </tr>
                                     <tr>
                                         <td style="border:0px;"><label for="gLocation">Location:</label></td>
-                                        <td style="border:0px;"><input id="gLocation" name="location" /></td>
+                                        <td style="border:0px;"><input id="gLocation" name="location" required/></td>
                                     </tr>
                                 </table>
                             </div>
