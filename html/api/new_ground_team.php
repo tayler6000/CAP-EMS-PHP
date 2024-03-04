@@ -32,7 +32,9 @@ if($result->num_rows > 0){
 }
 $stmt->close();
 
-$stmt = $conn->prepare("INSERT INTO `deployed_ground` (`mission`, `sortie`, `name`, `location`) VALUES (?, ?, ?, ?)");
+$stmt = $conn->prepare("INSERT INTO `deployed_ground` ".
+"(`mission`, `sortie`, `name`, `status`, `location`, checkin) VALUES ".
+'(?, ?, ?, "Initiating", ?, UNIX_TIMESTAMP())');
 $stmt->bind_param("siss", $mission, $sortie, $name, $location);
 $stmt->execute();
 $result = $stmt->get_result();
