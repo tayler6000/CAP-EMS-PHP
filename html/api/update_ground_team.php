@@ -8,10 +8,10 @@ if(!isset($_POST["id"]) or empty($_POST["id"]) or
    !isset($_POST["cov"]) or empty($_POST["cov"]) or
    !isset($_POST["driver"]) or empty($_POST["driver"]) or
    !isset($_POST["leader"]) or empty($_POST["leader"]) or
-   !isset($_POST["passengers"]) or empty($_POST["passengers"]) or
+   !isset($_POST["passengers"]) or (int)$_POST["passengers"] < 0 or
    !isset($_POST["status"]) or empty($_POST["status"]) or
    !isset($_POST["location"]) or empty($_POST["location"])){
-    http_response_code(404);
+    http_response_code(400);
     die();
 }
 $id = $_POST["id"];
