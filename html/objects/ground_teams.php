@@ -1,5 +1,6 @@
 <?php
     class GroundTeam {
+        public int $id;
         public string $mission;
         public int $sortie;
         public string $name;
@@ -13,14 +14,18 @@
 
         public function __construct(int $id){
             $conn = mysqli_connect("localhost", getenv("DB_USER"), getenv("DB_PASS"), getenv("DB_USER"));
-            $stmt = $conn->prepare("SELECT * FROM `deployed_ground` WHERE `sortie`=?");
+            $stmt = $conn->prepare("SELECT * FROM `deployed_ground` WHERE `id`=?");
             $stmt->bind_param("i", $id);
             $stmt->execute();
             $result = $stmt->get_result();
             if($result === False){
-                print($conn->error);
+                throw new Exception($conn->error);
+            }
+            if($result->num_rows === 0){
+                throw new Exception("Does not exist");
             }
             $row = mysqli_fetch_assoc($result);
+            $this->id = $row["id"];
             $this->mission = $row["mission"];
             $this->sortie = $row["sortie"];
             $this->name = $row["name"];
@@ -31,6 +36,22 @@
             $this->status = $row["status"];
             $this->location = $row["location"];
             $this->checkin = $row["checkin"];
+        }
+
+        public function jsonify(){
+            $self = array();
+            $self["id"] = $this->id;
+            $self["mission"] = $this->mission;
+            $self["sortie"] = $this->sortie;
+            $self["name"] = $this->name;
+            $self["cov"] = $this->cov;
+            $self["driver"] = $this->driver;
+            $self["leader"] = $this->leader;
+            $self["passengers"] = $this->passengers;
+            $self["status"] = $this->status;
+            $self["location"] = $this->location;
+            $self["checkin"] = $this->checkin;
+            return json_encode($self);
         }
     }
 ?>

@@ -31,7 +31,7 @@
             print($conn->error);
         }
         while($row = mysqli_fetch_assoc($result)){
-            $team = new GroundTeam($row["sortie"]);
+            $team = new GroundTeam($row["id"]);
             if($team->status === "Completed" or $team->status === "Cancelled") {
                 if((time() - $warning_offset) > $team->checkin){
                     continue;
@@ -55,7 +55,8 @@
             print("<td>".$team->status."</td>");
             print("<td>".$team->location."</td>");
             print("<td>".date("d M y Hi e", $team->checkin)."</td>");
-            print("<td><button>Action</button></td>");
+            print("<td><button type='button' class='btn btn-secondary'".
+            "onclick='javascript:editGroundTeam(".$team->id.")'>Action</button></td>");
             print("</tr>");
         }
         if($late_alarm) {
