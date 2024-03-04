@@ -22,7 +22,8 @@
     </tr>
     <?php
         $conn = mysqli_connect("localhost", getenv("DB_USER"), getenv("DB_PASS"), getenv("DB_USER"));
-        $stmt = $conn->prepare("SELECT * FROM `deployed_ground`");
+        $stmt = $conn->prepare('SELECT * FROM `deployed_ground` WHERE `status` != "Completed" AND `status` != "Cancelled"
+        UNION SELECT * FROM `deployed_ground` WHERE `status` = "Completed" OR `status` = "Cancelled"');
         $stmt->execute();
         $result = $stmt->get_result();
         if($result === False){
