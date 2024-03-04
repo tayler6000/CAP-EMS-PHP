@@ -35,7 +35,7 @@
                 if($type == "ground"){
                     $team = new GroundTeam($id);
                     print("<h2>Mission ".$team->mission." Ground Sortie ".$team->sortie."</h2>");
-                    print('<a href="/?type=ground&id='.$id.'" class="btn btn-primary">Edit Sortie</a><br>');
+                    print('<a href="/?type=ground&id='.$id.'" class="btn btn-primary">Edit Sortie</a><br><br>');
                     print("<h6>Current Entry:</h6>");
                     print("Mission: ".$team->mission."<br />");
                     print("Sortie: ".$team->sortie."<br />");
