@@ -36,7 +36,7 @@
                                 <label>GTL: <input id="gLeader" name="leader" /></label><br/>
                                 <label>Passengers: <input type="number" min="4" id="gPassengers" name="passengers" /></label><br/>
                                 <label>
-                                    <select id="gStatus" name="status">
+                                    Status: <select id="gStatus" name="status">
                                         <option value="Initiating">Initiating</option>
                                         <option value="Tasked">Tasked</option>
                                         <option value="Briefing">Briefing</option>
@@ -44,7 +44,7 @@
                                         <option value="Completed">Completed</option>
                                         <option value="Cancelled">Cancelled</option>
                                     </select>
-                                </label>
+                                </label><br/>
                                 <label>Location: <input id="gLocation" name="location" /></label><br/>
                             </div>
                             <div class="modal-footer">
