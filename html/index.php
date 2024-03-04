@@ -20,14 +20,16 @@
             <p id="time"></p>
             <div class="row">
                 <div class="col-md">
-                    <strong style="vertical-align:middle;">Ground Teams</strong>
+                    <strong style="vertical-align:middle;">Ground Sorties</strong>
                 </div>
                 <div class="col-md" style="text-align:right;">
-                    <button style="margin-bottom:10px;" type="button" class="btn btn-primary">New Ground Team</button>
+                    <button style="margin-bottom:10px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#newGroundModal">
+                        New Ground Sortie
+                    </button>
                 </div>
             </div>
             <div id="ground_teams"></div>
-            <!-- Ground Modal -->
+            <!-- Edit Ground Modal -->
             <div class="modal fade" id="groundModal" tabindex="-1" aria-labelledby="groundModalLabel" aria-hidden="true">
                 <form method="POST" action="api/update_ground_team.php">
                     <div class="modal-dialog">
@@ -75,6 +77,43 @@
                                     <tr>
                                         <td style="border:0px;"><label for="gLocation">Location:</label></td>
                                         <td style="border:0px;"><input id="gLocation" name="location" /></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- New Ground Modal -->
+            <div class="modal fade" id="newGroundModal" tabindex="-1" aria-labelledby="groundModalLabel" aria-hidden="true">
+                <form method="POST" action="api/new_ground_team.php">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="newGroundModalLabel">New Ground Sortie</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <table style="border:0px;">
+                                    <tr>
+                                        <td style="border:0px;"><label for="ngMission">Mission #:</lable></td>
+                                        <td style="border:0px;"><input id="ngMission" name="mission" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border:0px;"><label for="ngSortie">Sortie #:</lable></td>
+                                        <td style="border:0px;"><input type="number" min="4" id="ngSortie" name="sortie" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border:0px;"><label for="ngName">Name:</label></td>
+                                        <td style="border:0px;"><input id="ngName" name="name" autocomplete="off"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border:0px;"><label for="ngLocation">Location:</label></td>
+                                        <td style="border:0px;"><input id="ngLocation" name="location" /></td>
                                     </tr>
                                 </table>
                             </div>
