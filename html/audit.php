@@ -25,10 +25,12 @@
         <title>CAP EMS - Audit Log</title>
         <link href="/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href="/style.css" rel="stylesheet">
+        <script src="/js/update.js"></script>
     </head>
     <body>
         <?php require("nav.php"); ?>
         <div class="container">
+            <p id="time"></p>
             <?php
                 if($type == "ground"){
                     $team = new GroundTeam($id);
@@ -63,6 +65,10 @@
                 }
             ?>
         </div>
+        <script>
+            update("/api/time.php", document.getElementById("time"));
+            setInterval(update, 1000, "/api/time.php", document.getElementById("time"));
+        </script>
         <script src="/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
 </html>
