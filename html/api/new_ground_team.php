@@ -5,13 +5,15 @@ error_reporting(E_ALL);
 
 if(!isset($_POST["mission"]) or empty($_POST["mission"]) or
    !isset($_POST["name"]) or empty($_POST["name"]) or
-   !isset($_POST["sortie"]) or empty($_POST["sortie"])){
+   !isset($_POST["sortie"]) or empty($_POST["sortie"]) or
+   !isset($_POST["location"]) or empty($_POST["location"])){
     http_response_code(404);
     die();
 }
 $mission = $_POST["mission"];
 $name = $_POST["name"];
 $sortie = (int)$_POST["sortie"];
+$location = $_POST["location"];
 
 $conn = mysqli_connect("localhost", getenv("DB_USER"), getenv("DB_PASS"), getenv("DB_USER"));
 $stmt = $conn->prepare("SELECT * FROM `deployed_ground` WHERE `mission`=? AND `sortie`=?");
@@ -30,8 +32,8 @@ if($result->num_rows > 0){
 }
 $stmt->close();
 
-$stmt = $conn->prepare("INSERT INTO `deployed_ground` (`mission`, `sortie`, `name`) VALUES (?, ?, ?)");
-$stmt->bind_param("sis", $mission, $sortie, $name);
+$stmt = $conn->prepare("INSERT INTO `deployed_ground` (`mission`, `sortie`, `name`, `location`) VALUES (?, ?, ?, ?)");
+$stmt->bind_param("siss", $mission, $sortie, $name, $location);
 $stmt->execute();
 $result = $stmt->get_result();
 if($result === False){
