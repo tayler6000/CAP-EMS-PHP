@@ -18,7 +18,14 @@
         <?php require("nav.php"); ?>
         <div class="container">
             <p id="time"></p>
-            <h6>Ground Teams</h6>
+            <div class="row">
+                <div class="col-md">
+                    <h6>Ground Teams</h6>
+                </div>
+                <div class="col-md" style="text-align:right;">
+                    <button type="button" class="btn btn-primary">New Ground Team</button>
+                </div>
+            </div>
             <div id="ground_teams"></div>
             <!-- Ground Modal -->
             <div class="modal fade" id="groundModal" tabindex="-1" aria-labelledby="groundModalLabel" aria-hidden="true">
