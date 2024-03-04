@@ -30,10 +30,11 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
+                                <input name="id" id="gid" hidden />
                                 <table style="border:0px;">
                                     <tr>
                                         <td style="border:0px;"><label for="gName">Name:</label></td>
-                                        <td style="border:0px;"><input id="gName" name="name" /></td>
+                                        <td style="border:0px;"><input id="gName" name="name" autocomplete="off"/></td>
                                     </tr>
                                     <tr>
                                         <td style="border:0px;"><label for="gCOV">COV:</lable></td>
