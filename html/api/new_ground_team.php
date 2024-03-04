@@ -61,8 +61,8 @@ if($result->num_rows == 0){
 $row = mysqli_fetch_assoc($result);
 
 // Audit Log
-$stmt = $conn->prepare("INSERT INTO `audit` (`sortie_type`, `sortie_id`, `entry`, `timestamp`".
-'("ground" ?, ?, UNIX_TIMESTAMP())');
+$stmt = $conn->prepare("INSERT INTO `audit` (`sortie_type`, `sortie_id`, `entry`, `timestamp`) VALUES".
+'("ground", ?, ?, UNIX_TIMESTAMP())');
 $entry = "Created Sortie (Database ID ".$row["id"].")\n".
 "\n".
 "Mission: ".$mission."\n".
