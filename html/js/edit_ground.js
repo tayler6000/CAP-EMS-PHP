@@ -36,3 +36,8 @@ function editGroundTeam(id){
     const modal = new bootstrap.Modal(document.getElementById("groundModal"), {keyboard: false});
     modal.show();
 }
+
+function audit(){
+    const id_field = document.getElementById("gid");
+    window.location = "/audit.php?type=ground&id=" + id_field.value;
+}
