@@ -40,7 +40,7 @@
                             </div>
                             <div class="modal-body">
                                 <input name="id" id="gid" hidden />
-                                <a onclick='javascript:audit()'>Audit Trail</a>
+                                <a class="link" onclick="javascript:audit()">Audit Trail</a>
                                 <table style="border:0px;">
                                     <tr>
                                         <td style="border:0px;"><label for="gName">Tasking:</label></td>
