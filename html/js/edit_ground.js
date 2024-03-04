@@ -14,7 +14,7 @@ function editGroundTeam(id){
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
         object = JSON.parse(this.responseText);
-        title.innerHTML = "Mission " + object.mission + " Sortie # " + object.sortie
+        title.innerHTML = "Mission " + object.mission + " Ground Sortie " + object.sortie
         id_field.value = object.id;
         name.value = object.name;
         cov.value = object.cov;
