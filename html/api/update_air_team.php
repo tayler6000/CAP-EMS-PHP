@@ -20,7 +20,7 @@ $name = $_POST["name"];
 $callsign = $_POST["callsign"];
 $mp = $_POST["mp"];
 $mo = $_POST["mo"];
-$ms_ap = (int)$_POST["ms_ap"];
+$ms_ap = $_POST["ms_ap"];
 $status = $_POST["status"];
 $location = $_POST["location"];
 
