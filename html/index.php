@@ -13,6 +13,7 @@
         <link href="/style.css" rel="stylesheet">
         <script src="/js/update.js"></script>
         <script src="/js/edit_ground.js"></script>
+        <script src="/js/edit_air.js"></script>
     </head>
     <body>
         <?php require("nav.php"); ?>
