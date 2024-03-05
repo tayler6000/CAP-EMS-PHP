@@ -11,10 +11,10 @@
         <th>Mission #</th>
         <th>Sortie #</th>
         <th>Tasking</th>
-        <th>COV</th>
-        <th>Driver</th>
-        <th>GTL</th>
-        <th>Passengers</th>
+        <th>Callsign</th>
+        <th>MP</th>
+        <th>MO</th>
+        <th>MS/AP</th>
         <th>Status</th>
         <th>Location</th>
         <th>Checkin</th>
