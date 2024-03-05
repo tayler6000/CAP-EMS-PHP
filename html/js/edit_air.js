@@ -2,7 +2,7 @@ function editAirTeam(id){
     const id_field = document.getElementById("aid");
     const title = document.getElementById("airModalLabel");
     const name = document.getElementById("aName");
-    const callsign = document.getElementById("aCOV");
+    const callsign = document.getElementById("aCallsign");
     const mp = document.getElementById("aMP");
     const mo = document.getElementById("aMO");
     const ms_ap = document.getElementById("aMS_AP");
