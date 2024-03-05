@@ -179,7 +179,7 @@
                                     </tr>
                                     <tr>
                                         <td style="border:0px;"><label for="aMS_AP">MS/AP:</lable></td>
-                                        <td style="border:0px;"><input type="number" min="0" id="aMS_AP" name="ms_ap" required/></td>
+                                        <td style="border:0px;"><input id="aMS_AP" name="ms_ap" required/></td>
                                     </tr>
                                     <tr>
                                         <td style="border:0px;"><label for="aStatus">Status</label></td>
