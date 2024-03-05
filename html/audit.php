@@ -16,6 +16,7 @@
         die();
     }
     require_once("objects/ground_teams.php");
+    require_once("objects/air_teams.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,6 +63,38 @@
                         print(nl2br($row["entry"])."<hr />");
                     }
                     $stmt->close();
+                }elseif($type=="air"){
+                    $team = new AirTeam($id);
+                    print("<h2>Mission ".$team->mission." Air Sortie ".$team->sortie."</h2>");
+                    print('<a href="/?type=air&id='.$id.'" class="btn btn-primary">Edit Sortie</a><br><br>');
+                    print("<h6>Current Entry:</h6>");
+                    print("Mission: ".$team->mission."<br />");
+                    print("Sortie: ".$team->sortie."<br />");
+                    print("Tasking: ".$team->name."<br />");
+                    print("Callsign: ".$team->callsign."<br />");
+                    print("MP: ".$team->mp."<br />");
+                    print("MO: ".$team->mo."<br />");
+                    print("MS/AP: ".$team->ms_ap."<br />");
+                    print("Status: ".$team->status."<br />");
+                    print("Location: ".$team->location."<br />");
+                    print("Checkin: ".date("d M y Hi e", $team->checkin)."<br />");
+                    print("<br /><h6>Audit Trail:</h6><hr />");
+                    $conn = mysqli_connect("localhost", getenv("DB_USER"), getenv("DB_PASS"), getenv("DB_USER"));
+                    $stmt = $conn->prepare('SELECT * FROM `audit` WHERE `sortie_type`="air" AND `sortie_id`=?');
+                    $stmt->bind_param("i", $id);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    if($result === False){
+                        print($conn->error);
+                    }
+                    while($row = mysqli_fetch_assoc($result)){
+                        print(date("d M y Hi e", $row["timestamp"]));
+                        print("<br/>");
+                        print(nl2br($row["entry"])."<hr />");
+                    }
+                    $stmt->close();
+                }else{
+                    print("Unsupported Sortie Type");
                 }
             ?>
         </div>

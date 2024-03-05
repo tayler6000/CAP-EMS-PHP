@@ -263,6 +263,8 @@
             if(urlParams.has("type") && urlParams.has("id")){
                 if(urlParams.get("type") == "ground"){
                     editGroundTeam(urlParams.get("id"));
+                }else if(urlParams.get("type") == "air"){
+                    editAirTeam(urlParams.get("id"));
                 }
             }
         </script>
