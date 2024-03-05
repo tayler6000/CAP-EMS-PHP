@@ -37,7 +37,7 @@ function editGroundTeam(id){
     modal.show();
 }
 
-function audit(){
+function auditGround(){
     const id_field = document.getElementById("gid");
     window.location = "/audit.php?type=ground&id=" + id_field.value;
 }
