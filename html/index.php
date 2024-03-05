@@ -42,7 +42,7 @@
                             </div>
                             <div class="modal-body">
                                 <input name="id" id="gid" hidden />
-                                <a class="link" onclick="javascript:audit()">Audit Trail</a>
+                                <a class="link" onclick="javascript:auditGround()">Audit Trail</a>
                                 <table style="border:0px;">
                                     <tr>
                                         <td style="border:0px;"><label for="gName">Tasking:</label></td>
@@ -159,7 +159,7 @@
                             </div>
                             <div class="modal-body">
                                 <input name="id" id="aid" hidden />
-                                <a class="link" onclick="javascript:audit()">Audit Trail</a>
+                                <a class="link" onclick="javascript:auditAir()">Audit Trail</a>
                                 <table style="border:0px;">
                                     <tr>
                                         <td style="border:0px;"><label for="aName">Tasking:</label></td>

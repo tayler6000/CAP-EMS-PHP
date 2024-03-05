@@ -38,7 +38,7 @@ function editAirTeam(id){
     modal.show();
 }
 
-function audit(){
-    const id_field = document.getElementById("gid");
+function auditAir(){
+    const id_field = document.getElementById("aid");
     window.location = "/audit.php?type=air&id=" + id_field.value;
 }
