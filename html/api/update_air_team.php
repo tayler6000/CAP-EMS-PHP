@@ -27,7 +27,7 @@ $location = $_POST["location"];
 $conn = mysqli_connect("localhost", getenv("DB_USER"), getenv("DB_PASS"), getenv("DB_USER"));
 $stmt = $conn->prepare("UPDATE `deployed_air` SET `name`=?, `callsign`=?, `mp`=?, ".
 "`mo`=?, `ms_ap`=?, `status`=?, `location`=?, `checkin`=UNIX_TIMESTAMP() WHERE `id`=?");
-$stmt->bind_param("ssssissi", $name, $callsign, $mp, $mo, $ms_ap, $status, $location, $id);
+$stmt->bind_param("sssssssi", $name, $callsign, $mp, $mo, $ms_ap, $status, $location, $id);
 $stmt->execute();
 $result = $stmt->get_result();
 if($conn->error){
