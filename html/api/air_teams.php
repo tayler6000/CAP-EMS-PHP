@@ -18,7 +18,7 @@
         <th>Status</th>
         <th>Location</th>
         <th>Checkin</th>
-        <th>Action</th>
+        <th>Edit</th>
     </tr>
     <?php
         $late_alarm = False;
@@ -56,7 +56,7 @@
             print("<td>".$team->location."</td>");
             print("<td>".date("d M y Hi e", $team->checkin)."</td>");
             print("<td><button type='button' class='btn btn-secondary'".
-            "onclick='javascript:editAirTeam(".$team->id.")'>Action</button></td>");
+            "onclick='javascript:editAirTeam(".$team->id.")'>Edit</button></td>");
             print("</tr>");
         }
         if($late_alarm) {
