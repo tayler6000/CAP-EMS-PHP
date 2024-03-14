@@ -3,8 +3,8 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
     require_once("../objects/ground_teams.php");
-    $late_offset = 35 * 60;
-    $warning_offset = 30 * 60;
+    $late_offset = get_ground_late() * 60;
+    $warning_offset = get_ground_warning() * 60;
 ?>
 <table style="text-align:center;">
     <tr>
