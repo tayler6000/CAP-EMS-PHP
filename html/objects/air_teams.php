@@ -54,4 +54,26 @@
             return json_encode($self);
         }
     }
+
+    function get_air_late(){
+        $setting = "air_late";
+        $conn = mysqli_connect("localhost", getenv("DB_USER"), getenv("DB_PASS"), getenv("DB_USER"));
+        $stmt = $conn->prepare("SELECT * FROM `settings` WHERE `setting`=?");
+        $stmt->bind_param("s", $setting);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = mysqli_fetch_assoc($result);
+        return $row["value"];
+    }
+
+    function get_air_warning(){
+        $setting = "air_warning";
+        $conn = mysqli_connect("localhost", getenv("DB_USER"), getenv("DB_PASS"), getenv("DB_USER"));
+        $stmt = $conn->prepare("SELECT * FROM `settings` WHERE `setting`=?");
+        $stmt->bind_param("s", $setting);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = mysqli_fetch_assoc($result);
+        return $row["value"];
+    }
 ?>

@@ -3,8 +3,8 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
     require_once("../objects/air_teams.php");
-    $late_offset = 35 * 60;
-    $warning_offset = 30 * 60;
+    $late_offset = get_air_late() * 60;
+    $warning_offset = get_air_warning() * 60;
 ?>
 <table style="text-align:center;">
     <tr>
