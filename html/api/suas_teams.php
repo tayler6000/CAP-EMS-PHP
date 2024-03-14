@@ -46,7 +46,8 @@
             print("<td>".$team->mission."</td>");
             print("<td>".$team->sortie."</td>");
             print("<td>".$team->name."</td>");
-            print("<td>".$team->gt->mission." / ".$team->gt->sortie."</td>");
+            print("<td><a style='link' onclick='javascript:editGroundTeam(".$team->gt_id.")'>");
+            print($team->gt->mission." / ".$team->gt->sortie."</a></td>");
             print("<td>".$team->mp."</td>");
             print("<td>".$team->status."</td>");
             print("<td>".$team->location."</td>");
