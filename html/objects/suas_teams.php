@@ -1,5 +1,5 @@
 <?php
-    require_once("ground_teams.php");
+    require_once($_SERVER["DOCUMENT_ROOT"]."/objects/ground_teams.php");
     class SUASTeam {
         public int $id;
         public string $mission;
