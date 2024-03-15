@@ -248,13 +248,22 @@
                 </form>
             </div>
         </div>
+        <?php
+            require("api/alert.php");
+        ?>
         <script>
-            update("/api/time.php", document.getElementById("time"));
-            update("/api/ground_teams.php", document.getElementById("ground_teams"));
-            update("/api/air_teams.php", document.getElementById("air_teams"));
-            setInterval(update, 1000, "/api/time.php", document.getElementById("time"));
-            setInterval(update, 1500, "/api/ground_teams.php", document.getElementById("ground_teams"));
-            setInterval(update, 1500, "/api/air_teams.php", document.getElementById("air_teams"));
+            const time = document.getElementById("time");
+            const gt = document.getElementById("ground_teams");
+            const ga = document.getElementById("groundAlert");
+            const at = document.getElementById("air_teams");
+            const aa = document.getElementById("airAlert");
+            update("/api/time.php", time);
+            update("/api/ground_teams.php", gt, ga);
+            update("/api/air_teams.php", at, aa);
+            setInterval(update, 1000, "/api/time.php", time);
+            setInterval(update, 1000, "/api/ground_teams.php", gt, ga);
+            setInterval(update, 1000, "/api/air_teams.php", at, aa);
+            setInterval(play_alert, 2000);
         </script>
         <script src="/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script>
