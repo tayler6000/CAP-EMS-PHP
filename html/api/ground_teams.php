@@ -60,7 +60,7 @@
             print("</tr>");
         }
         if($late_alarm) {
-            http_response_code(406);
+            http_response_code(202);
         }
     ?>
 </table>
