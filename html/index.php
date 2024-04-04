@@ -376,14 +376,15 @@
             const at = document.getElementById("air_teams");
             const aa = document.getElementById("airAlert");
             const st = document.getElementById("suas_teams");
+            const sa = document.getElementById("suasAlert");
             update("/api/time.php", time);
             update("/api/ground_teams.php", gt, ga);
             update("/api/air_teams.php", at, aa);
-            update("/api/suas_teams.php", st);
+            update("/api/suas_teams.php", st, sa);
             setInterval(update, 1000, "/api/time.php", time);
             setInterval(update, 1000, "/api/ground_teams.php", gt, ga);
             setInterval(update, 1000, "/api/air_teams.php", at, aa);
-            setInterval(update, 1000, "/api/suas_teams.php", st);
+            setInterval(update, 1000, "/api/suas_teams.php", st, sa);
             setInterval(play_alert, 2000);
         </script>
         <script src="/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
