@@ -275,33 +275,25 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <input name="id" id="aid" hidden />
+                                <input name="id" id="sid" hidden />
                                 <a class="link" onclick="javascript:auditSUAS()">Audit Trail</a>
                                 <table style="border:0px;">
                                     <tr>
-                                        <td style="border:0px;"><label for="aName">Tasking:</label></td>
-                                        <td style="border:0px;"><input id="aName" name="name" autocomplete="off" required/></td>
+                                        <td style="border:0px;"><label for="sName">Tasking:</label></td>
+                                        <td style="border:0px;"><input id="sName" name="name" autocomplete="off" required/></td>
                                     </tr>
                                     <tr>
-                                        <td style="border:0px;"><label for="aCallsign">Callsign:</lable></td>
-                                        <td style="border:0px;"><input id="aCallsign" name="callsign" required/></td>
+                                        <td style="border:0px;"><label for="sGroundTeam">Ground Team:</lable></td>
+                                        <td style="border:0px;"><select id="sGroundTeam" name="gt" required></select></td>
                                     </tr>
                                     <tr>
-                                        <td style="border:0px;"><label for="aMP">MP:</lable></td>
-                                        <td style="border:0px;"><input id="aMP" name="mp" required/></td>
+                                        <td style="border:0px;"><label for="sMP">MP:</lable></td>
+                                        <td style="border:0px;"><input id="sMP" name="mp" required/></td>
                                     </tr>
                                     <tr>
-                                        <td style="border:0px;"><label for="aMO">MO:</lable></td>
-                                        <td style="border:0px;"><input id="aMO" name="mo" required/></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="border:0px;"><label for="aMS_AP">MS/AP:</lable></td>
-                                        <td style="border:0px;"><input id="aMS_AP" name="ms_ap" required/></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="border:0px;"><label for="aStatus">Status</label></td>
+                                        <td style="border:0px;"><label for="sStatus">Status</label></td>
                                         <td style="border:0px;">
-                                            <select id="aStatus" name="status">
+                                            <select id="sStatus" name="status">
                                                 <option value="Initiating">Initiating</option>
                                                 <option value="Tasked">Tasked</option>
                                                 <option value="Briefing">Briefing</option>
@@ -314,8 +306,8 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="border:0px;"><label for="aLocation">Location:</label></td>
-                                        <td style="border:0px;"><input id="aLocation" name="location" required/></td>
+                                        <td style="border:0px;"><label for="sLocation">Location:</label></td>
+                                        <td style="border:0px;"><input id="sLocation" name="location" required/></td>
                                     </tr>
                                 </table>
                             </div>
