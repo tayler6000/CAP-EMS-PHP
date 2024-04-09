@@ -5,8 +5,8 @@
         public string $mission;
         public int $sortie;
         public string $name;
-        public int $gt_id;
-        public GroundTeam $gt;
+        public ?int $gt_id;
+        public ?GroundTeam $gt;
         public string $mp;
         public string $status;
         public string $location;
@@ -30,7 +30,9 @@
             $this->sortie = $row["sortie"];
             $this->name = $row["name"];
             $this->gt_id = $row["ground_id"];
-            $this->gt = new GroundTeam($row["ground_id"]);
+            if($this->gt_id !== null){
+                $this->gt = new GroundTeam($row["ground_id"]);
+            }
             $this->mp = $row["mp"];
             $this->status = $row["status"];
             $this->location = $row["location"];
