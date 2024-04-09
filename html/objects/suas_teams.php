@@ -30,6 +30,7 @@
             $this->sortie = $row["sortie"];
             $this->name = $row["name"];
             $this->gt_id = $row["ground_id"];
+            $this->gt = null;
             if($this->gt_id !== null){
                 $this->gt = new GroundTeam($row["ground_id"]);
             }
