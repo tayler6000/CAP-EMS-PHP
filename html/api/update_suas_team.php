@@ -15,7 +15,7 @@ if(!isset($_POST["id"]) or empty($_POST["id"]) or
 }
 $id = $_POST["id"];
 $name = $_POST["name"];
-$callsign = $_POST["gt"];
+$gt = $_POST["gt"];
 $mp = $_POST["mp"];
 $status = $_POST["status"];
 $location = $_POST["location"];
