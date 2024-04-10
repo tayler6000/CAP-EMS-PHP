@@ -53,7 +53,7 @@ function loadAvailableGroundTeams(id, gt_id, gt){
             option = document.createElement("option");
             option.value = key;
             option.innerText = object[key];
-            if(key === gt_id){
+            if(key == gt_id){
                 option.selected = "selected"
             }
             gt_field.appendChild(option);
