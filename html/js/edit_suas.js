@@ -55,6 +55,7 @@ function loadAvailableGroundTeams(id, gt_id, gt){
             option.innerText = object[key];
             if(key == gt_id){
                 option.selected = "selected"
+                found = true;
             }
             gt_field.appendChild(option);
         }
