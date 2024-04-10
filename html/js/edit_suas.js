@@ -76,7 +76,7 @@ function loadAvailableGroundTeams(id, gt_id, gt){
         editSUASTeam(id);
     }
     xhttp.timeout = 1000;
-    xhttp.open("GET", "/api/get_suas_team_json.php?id=" + id, true);
+    xhttp.open("GET", "/api/available_ground_teams.php", true);
     xhttp.send();
     const modal = new bootstrap.Modal(document.getElementById("suasModal"), {keyboard: false});
     modal.show();
