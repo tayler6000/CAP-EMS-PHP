@@ -12,3 +12,7 @@ table, th, td {
 th, .center {
   text-align: center;
 }
+
+a {
+    cursor: pointer;
+}
