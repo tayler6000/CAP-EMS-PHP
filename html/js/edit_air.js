@@ -29,6 +29,7 @@ function editAirTeam(id){
         editAirTeam(id)
     }
     xhttp.ontimeout = function(){
+        console.error("Timeout air edit")
         editAirTeam(id);
     }
     xhttp.timeout = 1000;

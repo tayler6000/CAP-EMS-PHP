@@ -28,6 +28,7 @@ function editGroundTeam(id){
         console.error(error);
     }
     xhttp.ontimeout = function(){
+        console.error("Timeout ground edit")
         editGroundTeam(id);
     }
     xhttp.timeout = 1000;
