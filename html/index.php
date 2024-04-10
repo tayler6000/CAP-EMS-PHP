@@ -389,6 +389,8 @@
                     editGroundTeam(urlParams.get("id"));
                 }else if(urlParams.get("type") == "air"){
                     editAirTeam(urlParams.get("id"));
+                }else if(urlParams.get("type") == "suas"){
+                    editSUASTeam(urlParams.get("id"));
                 }
             }
         </script>
