@@ -21,7 +21,7 @@ $status = $_POST["status"];
 $location = $_POST["location"];
 
 $conn = mysqli_connect("localhost", getenv("DB_USER"), getenv("DB_PASS"), getenv("DB_USER"));
-$stmt = $conn->prepare("UPDATE `deployed_suas` SET `name`=?, `gt`=?, `mp`=?, ".
+$stmt = $conn->prepare("UPDATE `deployed_suas` SET `name`=?, `ground_id`=?, `mp`=?, ".
 "`status`=?, `location`=?, `checkin`=UNIX_TIMESTAMP() WHERE `id`=?");
 $stmt->bind_param("sisssi", $name, $gt, $mp, $status, $location, $id);
 $stmt->execute();
