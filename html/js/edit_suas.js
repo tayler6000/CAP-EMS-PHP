@@ -39,7 +39,7 @@ function loadAvailableGroundTeams(id, gt_id, gt){
     xhttp.onload = function() {
         object = JSON.parse(this.responseText);
         gt_field.innerHTML = "";  // Remove previous options
-        let found = (gt_id === null ? True : False)
+        let found = (gt_id === null ? true : false)
         // Create "Not Assigned" Option
         option = document.createElement("option");
         option.value = "null";
