@@ -34,11 +34,11 @@ function editSUASTeam(id){
 }
 
 function loadAvailableGroundTeams(id, gt_id, gt){
-    const gt = document.getElementById("sGroundTeam");
+    const gt_field = document.getElementById("sGroundTeam");
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
         object = JSON.parse(this.responseText);
-        gt.innerHTML = "";  // Remove previous options
+        gt_field.innerHTML = "";  // Remove previous options
         let found = (gt_id === null ? True : False)
         // Create "Not Assigned" Option
         option = document.createElement("option");
@@ -47,7 +47,7 @@ function loadAvailableGroundTeams(id, gt_id, gt){
         if(found){
             option.selected = "selected"
         }
-        gt.appendChild(option);
+        gt_field.appendChild(option);
         // Create all active ground team options
         for(const key in object){
             option = document.createElement("option");
@@ -56,7 +56,7 @@ function loadAvailableGroundTeams(id, gt_id, gt){
             if(key === gt_id){
                 option.selected = "selected"
             }
-            gt.appendChild(option);
+            gt_field.appendChild(option);
         }
         // If we are already assigned a team that was not created, then add it
         if(!found){
@@ -64,7 +64,7 @@ function loadAvailableGroundTeams(id, gt_id, gt){
             option.value = gt_id;
             option.innerText = gt;
             option.selected = "selected"
-            gt.appendChild(option);
+            gt_field.appendChild(option);
         }
     }
     xhttp.onerror = function(error) {
