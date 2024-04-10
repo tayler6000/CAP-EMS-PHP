@@ -47,7 +47,11 @@
             $self["sortie"] = $this->sortie;
             $self["name"] = $this->name;
             $self["gt_id"] = $this->gt_id;
-            $self["gt"] = $this->gt->mission." / ".$this->gt->sortie;
+            if($this->gt_id === null){
+                $self["gt"] = "Not Assigned";
+            }else{
+                $self["gt"] = $this->gt->mission." / ".$this->gt->sortie;
+            }
             $self["mp"] = $this->mp;
             $self["status"] = $this->status;
             $self["location"] = $this->location;

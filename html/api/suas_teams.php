@@ -60,6 +60,7 @@
             "onclick='javascript:editSUASTeam(".$team->id.")'>Edit</button></td>");
             print("</tr>");
         }
+        $conn->close();
         if($late_alarm) {
             http_response_code(202);
         }
