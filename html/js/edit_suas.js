@@ -21,19 +21,19 @@ function editSUASTeam(id){
     }
     xhttp.onerror = function(error) {
         console.error(error);
-        editAirTeam(id)
+        editSUASTeam(id)
     }
     xhttp.ontimeout = function(){
-        editAirTeam(id);
+        editSUASTeam(id);
     }
     xhttp.timeout = 1000;
     xhttp.open("GET", "/api/get_suas_team_json.php?id=" + id, true);
     xhttp.send();
-    const modal = new bootstrap.Modal(document.getElementById("airModal"), {keyboard: false});
+    const modal = new bootstrap.Modal(document.getElementById("suasModal"), {keyboard: false});
     modal.show();
 }
 
-function auditAir(){
-    const id_field = document.getElementById("aid");
-    window.location = "/audit.php?type=air&id=" + id_field.value;
+function auditSUAS(){
+    const id_field = document.getElementById("sid");
+    window.location = "/audit.php?type=suas&id=" + id_field.value;
 }
