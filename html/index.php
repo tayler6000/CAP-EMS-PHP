@@ -14,6 +14,7 @@
         <script src="/js/update.js"></script>
         <script src="/js/edit_ground.js"></script>
         <script src="/js/edit_air.js"></script>
+        <script src="/js/edit_suas.js"></script>
     </head>
     <body>
         <?php require("nav.php"); ?>
