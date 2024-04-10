@@ -10,13 +10,14 @@
     }
     $type = $_GET["type"];
     $id = (int)$_GET["id"];
-    if($type != "ground" and $type != "air"){
+    if($type != "ground" and $type != "air" and $type != "suas"){
         http_response_code(400);
         header("Location:/");
         die();
     }
     require_once("objects/ground_teams.php");
     require_once("objects/air_teams.php");
+    require_once("objects/suas_teams.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,6 +82,34 @@
                     print("<br /><h6>Audit Trail:</h6><hr />");
                     $conn = mysqli_connect("localhost", getenv("DB_USER"), getenv("DB_PASS"), getenv("DB_USER"));
                     $stmt = $conn->prepare('SELECT * FROM `audit` WHERE `sortie_type`="air" AND `sortie_id`=?');
+                    $stmt->bind_param("i", $id);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    if($result === False){
+                        print($conn->error);
+                    }
+                    while($row = mysqli_fetch_assoc($result)){
+                        print(date("d M y Hi e", $row["timestamp"]));
+                        print("<br/>");
+                        print(nl2br($row["entry"])."<hr />");
+                    }
+                    $stmt->close();
+                }elseif($type=="suas"){
+                    $team = new SUASTeam($id);
+                    print("<h2>Mission ".$team->mission." sUAS Sortie ".$team->sortie."</h2>");
+                    print('<a href="/?type=suas&id='.$id.'" class="btn btn-primary">Edit Sortie</a><br><br>');
+                    print("<h6>Current Entry:</h6>");
+                    print("Mission: ".$team->mission."<br />");
+                    print("Sortie: ".$team->sortie."<br />");
+                    print("Tasking: ".$team->name."<br />");
+                    print("Ground Team: ".$team->gt->mission." / ".$team->gt->sortie."<br />");
+                    print("MP: ".$team->mp."<br />");
+                    print("Status: ".$team->status."<br />");
+                    print("Location: ".$team->location."<br />");
+                    print("Checkin: ".date("d M y Hi e", $team->checkin)."<br />");
+                    print("<br /><h6>Audit Trail:</h6><hr />");
+                    $conn = mysqli_connect("localhost", getenv("DB_USER"), getenv("DB_PASS"), getenv("DB_USER"));
+                    $stmt = $conn->prepare('SELECT * FROM `audit` WHERE `sortie_type`="sUAS" AND `sortie_id`=?');
                     $stmt->bind_param("i", $id);
                     $stmt->execute();
                     $result = $stmt->get_result();

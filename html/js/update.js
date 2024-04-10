@@ -17,8 +17,9 @@ function update(endpoint, container, alert=null){
 function play_alert(){
     const ground = document.getElementById("groundAlert");
     const air = document.getElementById("airAlert");
+    const sUAS = document.getElementById("suasAlert");
     const alert = document.getElementById("alert");
-    if(ground.value == 1 || air.value == 1){
+    if(ground.value == 1 || air.value == 1 || sUAS.value == 1){
         alert.play();
     }
 }
