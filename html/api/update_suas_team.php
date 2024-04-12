@@ -40,7 +40,7 @@ $entry = "Updated Sortie (Database ID ".$id.")\n".
 "Mission: ".$team->mission."\n".
 "Sortie: ".$team->sortie."\n".
 "Tasking: ".$team->name."\n".
-"Ground Team: ".$team->gt->mission." / ".$team->gt->sortie."\n".
+"Ground Team: ".($team->gt !== null ? $team->gt->mission." / ".$team->gt->sortie : "Not Assigned")."\n".
 "MP: ".$team->mp."\n".
 "Status: ".$team->status."\n".
 "Location: ".$team->location;

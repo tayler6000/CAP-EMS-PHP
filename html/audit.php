@@ -102,7 +102,7 @@
                     print("Mission: ".$team->mission."<br />");
                     print("Sortie: ".$team->sortie."<br />");
                     print("Tasking: ".$team->name."<br />");
-                    print("Ground Team: ".$team->gt->mission." / ".$team->gt->sortie."<br />");
+                    print("Ground Team: ".($team->gt !== null ? $team->gt->mission." / ".$team->gt->sortie : "Not Assigned")."<br />");
                     print("MP: ".$team->mp."<br />");
                     print("Status: ".$team->status."<br />");
                     print("Location: ".$team->location."<br />");
