@@ -2,6 +2,9 @@
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
+    $type = $_GET["type"];
+    $mission = $_GET["mission"];
+    $sortie = (int)$_GET["sortie"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,30 +31,27 @@
                         <td style="border-width:0px">
                             <select id="type" name="type">
                                 <option value="any">Any</option>
-                                <option value="ground">Ground</option>
-                                <option value="air">Air</option>
-                                <option value="suas">sUAS</option>
+                                <option value="ground" <?= $type == "ground" ? "selected" : "" ?>>Ground</option>
+                                <option value="air" <?= $type == "air" ? "selected" : "" ?>>Air</option>
+                                <option value="suas" <?= $type == "suas" ? "selected" : "" ?>>sUAS</option>
                             </select>
                         </td>
                     </tr>
                     <tr>
                         <td style="border-width:0px"><label for="mission">Mission Number:</label></td>
-                        <td style="border-width:0px"><input id="mission" name="mission" type="text"></td>
+                        <td style="border-width:0px"><input id="mission" name="mission" type="text" value="<?= $mission ?>"></td>
                     </tr>
                     <tr>
                         <td style="border-width:0px"><label for="sortie">Sortie Number:</label></td>
-                        <td style="border-width:0px"><input id="sortie" name="sortie" type="number" min="1"></td>
+                        <td style="border-width:0px"><input id="sortie" name="sortie" type="number" min="1" value="<? $sortie ?>"></td>
                     </tr>
                 </table>
                 <button class="btn btn-primary">Search</button><br><br>
-                <?php if(!empty($_GET["type"])){ ?>
+                <?php if(!empty($type)){ ?>
                 <hr>
                 <h4>Search Results:</h4>
                 <?php
                     $conn = mysqli_connect("localhost", getenv("DB_USER"), getenv("DB_PASS"), getenv("DB_USER"));
-                    $type = $_GET["type"];
-                    $mission = $_GET["mission"];
-                    $sortie = (int)$_GET["sortie"];
                     $mission_search = "%".$mission."%";
                     $sortie_search = "%";
                     if($sortie !== 0){
