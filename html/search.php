@@ -4,7 +4,7 @@
     error_reporting(E_ALL);
     $type = !empty($_GET["type"]) ? $_GET["type"] : "";
     $mission = !empty($_GET["mission"]) ? $_GET["mission"] : "";
-    $sortie = !empty($_GET["sortie"]) ? (int)$_GET["sortie"] : "";
+    $sortie = !empty($_GET["sortie"]) ? $_GET["sortie"] : "";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,10 +53,7 @@
                 <?php
                     $conn = mysqli_connect("localhost", getenv("DB_USER"), getenv("DB_PASS"), getenv("DB_USER"));
                     $mission_search = "%".$mission."%";
-                    $sortie_search = "%";
-                    if($sortie !== 0){
-                        $sortie_search = "%".$sortie."%";
-                    }
+                    $sortie_search = "%".$sortie."%";
                     if($type == "any"){
                         $stmt = $conn->prepare("SELECT `id`, `mission`, `sortie`, `name`, 'ground' as `type` FROM `deployed_ground` WHERE `mission` LIKE ? AND `sortie` LIKE ? UNION ".
                         "SELECT `id`, `mission`, `sortie`, `name`, 'air' as `type` FROM `deployed_air` WHERE `mission` LIKE ? AND `sortie` LIKE ? UNION ".
