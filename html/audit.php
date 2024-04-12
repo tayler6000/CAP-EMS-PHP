@@ -64,6 +64,7 @@
                         print(nl2br($row["entry"])."<hr />");
                     }
                     $stmt->close();
+                    $conn->close();
                 }elseif($type=="air"){
                     $team = new AirTeam($id);
                     print("<h2>Mission ".$team->mission." Air Sortie ".$team->sortie."</h2>");
@@ -94,6 +95,7 @@
                         print(nl2br($row["entry"])."<hr />");
                     }
                     $stmt->close();
+                    $conn->close();
                 }elseif($type=="suas"){
                     $team = new SUASTeam($id);
                     print("<h2>Mission ".$team->mission." sUAS Sortie ".$team->sortie."</h2>");
@@ -122,6 +124,7 @@
                         print(nl2br($row["entry"])."<hr />");
                     }
                     $stmt->close();
+                    $conn->close();
                 }else{
                     print("Unsupported Sortie Type");
                 }

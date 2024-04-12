@@ -53,5 +53,6 @@ if($conn->error){
     die(json_encode(array("error"=>$conn->error, "code"=>5)));
 }
 $stmt->close();
+$conn->close();
 header("Location:/");
 ?>

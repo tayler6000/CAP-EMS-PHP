@@ -36,6 +36,8 @@
             $this->status = $row["status"];
             $this->location = $row["location"];
             $this->checkin = $row["checkin"];
+            $stmt->close();
+            $conn->close();
         }
 
         public function jsonify(){
