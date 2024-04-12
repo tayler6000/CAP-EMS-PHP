@@ -77,9 +77,12 @@
                     if($result->num_rows === 0){
                         print("No results");
                     }
+                    $beautify = array("air"=>"Air", "ground"=>"Ground", "suas"=>"sUAS");
                     while($row = mysqli_fetch_assoc($result)){
                         print("<a class='link' href='/audit.php?type=".$row["type"]."&id=".$row["id"]."'>".
-                              $row["mission"]."/".$row["sorite"]."</a>: ".$row["name"]);
+                              $row["mission"]." / ".$beautify[$row["type"]]." Sortie ".$row["sortie"]."</a>: ".
+                              $row["name"]
+                        );
                     }
                     $conn->close();
                 ?>
