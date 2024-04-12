@@ -40,7 +40,8 @@ $entry = "Updated Sortie (Database ID ".$id.")\n".
 "Mission: ".$team->mission."\n".
 "Sortie: ".$team->sortie."\n".
 "Tasking: ".$team->name."\n".
-"Ground Team: ".($team->gt !== null ? $team->gt->mission." / ".$team->gt->sortie : "Not Assigned")."\n".
+"Ground Team: ".($team->gt !== null ? "<a href='/audit.php?type=ground&id=".
+                 $team->gt_id."'>".$team->gt->mission." / ".$team->gt->sortie : "Not Assigned")."</a>\n".
 "MP: ".$team->mp."\n".
 "Status: ".$team->status."\n".
 "Location: ".$team->location;
