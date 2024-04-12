@@ -2,9 +2,9 @@
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
-    $type = !empty($_GET["type"] ? $_GET["type"] : "";
-    $mission = !empty($_GET["mission"] ? $_GET["mission"] : "";
-    $sortie = !empty($_GET["sortie"] ? (int)$_GET["sortie"] : "";
+    $type = !empty($_GET["type"]) ? $_GET["type"] : "";
+    $mission = !empty($_GET["mission"]) ? $_GET["mission"] : "";
+    $sortie = !empty($_GET["sortie"]) ? (int)$_GET["sortie"] : "";
 ?>
 <!DOCTYPE html>
 <html lang="en">
