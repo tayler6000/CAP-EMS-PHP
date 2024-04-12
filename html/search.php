@@ -22,10 +22,10 @@
             <p id="time"></p>
             <h2>Search Sorties</h2>
             <form>
-                <table>
+                <table style="border:0px;margin:initial;width:initial;">
                     <tr>
-                        <td><label for="type">Sortie Type:</label></td>
-                        <td>
+                        <td style="border-width:0px"><label for="type">Sortie Type:</label></td>
+                        <td style="border-width:0px">
                             <select id="type" name="type">
                                 <option value="ground">Ground</option>
                                 <option value="air">Air</option>
@@ -34,12 +34,12 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><label for="mission">Mission Number:</label></td>
-                        <td><input id="mission" name="mission" type="text"></td>
+                        <td style="border-width:0px"><label for="mission">Mission Number:</label></td>
+                        <td style="border-width:0px"><input id="mission" name="mission" type="text"></td>
                     </tr>
                     <tr>
-                        <td><label for="sortie">Sortie Number:</label></td>
-                        <td><input id="sortie" name="sortie" type="number" min="1"></td>
+                        <td style="border-width:0px"><label for="sortie">Sortie Number:</label></td>
+                        <td style="border-width:0px"><input id="sortie" name="sortie" type="number" min="1"></td>
                     </tr>
                 </table>
                 <submit class="btn-primary">
