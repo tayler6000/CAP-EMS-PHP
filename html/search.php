@@ -43,7 +43,47 @@
                         <td style="border-width:0px"><input id="sortie" name="sortie" type="number" min="1"></td>
                     </tr>
                 </table>
-                <button class="btn btn-primary">Search</button>
+                <button class="btn btn-primary">Search</button><br><br>
+                <?php if(!empty($_GET["type"])){ ?>
+                <hr>
+                <h4>Search Results:</h4>
+                <?php
+                    $conn = mysqli_connect("localhost", getenv("DB_USER"), getenv("DB_PASS"), getenv("DB_USER"));
+                    $type = $_GET["type"];
+                    $mission = $_GET["mission"];
+                    $sortie = (int)$_GET["sortie"];
+                    $mission_search = "%".$mission."%";
+                    $sortie_search = "%".$sortie."%";
+                    if($type == "any"){
+                        $stmt = $conn->prepare("SELECT *, 'ground' as `type` FROM `deployed_ground` WHERE `mission` LIKE ? OR `sortie` LIKE ? UNION ".
+                        "SELECT *, 'air' as `type` FROM `deployed_air` WHERE `mission` LIKE ? OR `sortie` LIKE ? UNION ".
+                        "SELECT *, 'suas' as `type` FROM `deployed_suas` WHERE `mission` LIKE ? OR `sortie` LIKE ?");
+                        $stmt->bind_param("ssssss", $mission_search, $sorite_search, $mission_search, $sorite_search, $mission_search, $sorite_search);
+                    }elseif($type == "ground"){
+                        $stmt = $conn->prepare("SELECT *, 'ground' as `type` FROM `deployed_ground` WHERE `mission` LIKE ? OR `sortie` LIKE ?");
+                        $stmt->bind_param("ss", $mission_search, $sorite_search);
+                    }elseif($type == "air"){
+                        $stmt = $conn->prepare("SELECT *, 'air' as `type` FROM `deployed_air` WHERE `mission` LIKE ? OR `sortie` LIKE ?");
+                        $stmt->bind_param("ss", $mission_search, $sorite_search);
+                    }elseif($type == "suas"){
+                        $stmt = $conn->prepare("SELECT *, 'suas' as `type` FROM `deployed_suas` WHERE `mission` LIKE ? OR `sortie` LIKE ?");
+                        $stmt->bind_param("ss", $mission_search, $sorite_search);
+                    }
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    if($result === False){
+                        print($conn->error);
+                    }
+                    if($result->num_rows === 0){
+                        print("No results");
+                    }
+                    while($row = mysqli_fetch_assoc($result)){
+                        print("<a class='link' href='/audit.php?type=".$row["type"]."&id=".$row["id"]."'>".
+                              $row["mission"]."/".$row["sorite"]."</a>: ".$row["name"]);
+                    }
+                    $conn->close();
+                ?>
+                <?php } ?>
             </form>
         </div>
         <script>
