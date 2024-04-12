@@ -55,18 +55,18 @@
                     $mission_search = "%".$mission."%";
                     $sortie_search = "%".$sortie."%";
                     if($type == "any"){
-                        $stmt = $conn->prepare("SELECT `id`, `mission`, `sortie`, `name`, 'ground' as `type` FROM `deployed_ground` WHERE `mission` LIKE ? OR `sortie` LIKE ? UNION ".
-                        "SELECT `id`, `mission`, `sortie`, `name`, 'air' as `type` FROM `deployed_air` WHERE `mission` LIKE ? OR `sortie` LIKE ? UNION ".
-                        "SELECT `id`, `mission`, `sortie`, `name`, 'suas' as `type` FROM `deployed_suas` WHERE `mission` LIKE ? OR `sortie` LIKE ?");
+                        $stmt = $conn->prepare("SELECT `id`, `mission`, `sortie`, `name`, 'ground' as `type` FROM `deployed_ground` WHERE `mission` LIKE ? AND `sortie` LIKE ? UNION ".
+                        "SELECT `id`, `mission`, `sortie`, `name`, 'air' as `type` FROM `deployed_air` WHERE `mission` LIKE ? AND `sortie` LIKE ? UNION ".
+                        "SELECT `id`, `mission`, `sortie`, `name`, 'suas' as `type` FROM `deployed_suas` WHERE `mission` LIKE ? AND `sortie` LIKE ?");
                         $stmt->bind_param("ssssss", $mission_search, $sorite_search, $mission_search, $sorite_search, $mission_search, $sorite_search);
                     }elseif($type == "ground"){
-                        $stmt = $conn->prepare("SELECT *, 'ground' as `type` FROM `deployed_ground` WHERE `mission` LIKE ? OR `sortie` LIKE ?");
+                        $stmt = $conn->prepare("SELECT *, 'ground' as `type` FROM `deployed_ground` WHERE `mission` LIKE ? AND `sortie` LIKE ?");
                         $stmt->bind_param("ss", $mission_search, $sorite_search);
                     }elseif($type == "air"){
-                        $stmt = $conn->prepare("SELECT *, 'air' as `type` FROM `deployed_air` WHERE `mission` LIKE ? OR `sortie` LIKE ?");
+                        $stmt = $conn->prepare("SELECT *, 'air' as `type` FROM `deployed_air` WHERE `mission` LIKE ? AND `sortie` LIKE ?");
                         $stmt->bind_param("ss", $mission_search, $sorite_search);
                     }elseif($type == "suas"){
-                        $stmt = $conn->prepare("SELECT *, 'suas' as `type` FROM `deployed_suas` WHERE `mission` LIKE ? OR `sortie` LIKE ?");
+                        $stmt = $conn->prepare("SELECT *, 'suas' as `type` FROM `deployed_suas` WHERE `mission` LIKE ? AND `sortie` LIKE ?");
                         $stmt->bind_param("ss", $mission_search, $sorite_search);
                     }
                     $stmt->execute();
