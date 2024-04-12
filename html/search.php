@@ -43,7 +43,7 @@
                         <td style="border-width:0px"><input id="sortie" name="sortie" type="number" min="1"></td>
                     </tr>
                 </table>
-                <submit class="btn-primary">
+                <button class="btn btn-primary">Search</button>
             </form>
         </div>
         <script>
