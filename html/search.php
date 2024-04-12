@@ -27,6 +27,7 @@
                         <td style="border-width:0px"><label for="type">Sortie Type:</label></td>
                         <td style="border-width:0px">
                             <select id="type" name="type">
+                                <option value="any">Any</option>
                                 <option value="ground">Ground</option>
                                 <option value="air">Air</option>
                                 <option value="suas">sUAS</option>
