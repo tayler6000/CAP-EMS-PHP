@@ -15,7 +15,7 @@ if(!isset($_POST["id"]) or empty($_POST["id"]) or
 }
 $id = $_POST["id"];
 $name = $_POST["name"];
-$gt = $_POST["gt"];
+$gt = $_POST["gt"] == "null" ? null : (int)$_POST["gt"];
 $mp = $_POST["mp"];
 $status = $_POST["status"];
 $location = $_POST["location"];
@@ -23,7 +23,7 @@ $location = $_POST["location"];
 $conn = mysqli_connect("localhost", getenv("DB_USER"), getenv("DB_PASS"), getenv("DB_USER"));
 $stmt = $conn->prepare("UPDATE `deployed_suas` SET `name`=?, `ground_id`=?, `mp`=?, ".
 "`status`=?, `location`=?, `checkin`=UNIX_TIMESTAMP() WHERE `id`=?");
-$stmt->bind_param("sisssi", $name, $gt, $mp, $status, $location, $id);
+$stmt->bind_param("sssssi", $name, $gt, $mp, $status, $location, $id);
 $stmt->execute();
 $result = $stmt->get_result();
 if($conn->error){
