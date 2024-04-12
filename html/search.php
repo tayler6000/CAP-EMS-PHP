@@ -75,7 +75,7 @@
                         print($conn->error);
                     }
                     if($result->num_rows === 0){
-                        print("No results");
+                        print("No results.");
                     }
                     $beautify = array("air"=>"Air", "ground"=>"Ground", "suas"=>"sUAS");
                     while($row = mysqli_fetch_assoc($result)){
