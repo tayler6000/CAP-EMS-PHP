@@ -43,7 +43,7 @@
                     </tr>
                     <tr>
                         <td style="border-width:0px"><label for="sortie">Sortie Number:</label></td>
-                        <td style="border-width:0px"><input id="sortie" name="sortie" type="number" min="1" value="<? $sortie ?>"></td>
+                        <td style="border-width:0px"><input id="sortie" name="sortie" type="number" min="1" value="<?= $sortie ?>"></td>
                     </tr>
                 </table>
                 <button class="btn btn-primary">Search</button><br><br>
