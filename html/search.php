@@ -2,9 +2,9 @@
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
-    $type = $_GET["type"];
-    $mission = $_GET["mission"];
-    $sortie = (int)$_GET["sortie"];
+    $type = !empty($_GET["type"] ? $_GET["type"] : "";
+    $mission = !empty($_GET["mission"] ? $_GET["mission"] : "";
+    $sortie = !empty($_GET["sortie"] ? (int)$_GET["sortie"] : "";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +43,7 @@
                     </tr>
                     <tr>
                         <td style="border-width:0px"><label for="sortie">Sortie Number:</label></td>
-                        <td style="border-width:0px"><input id="sortie" name="sortie" type="number" min="1" value="<?= $sortie !== 0 ? $sortie : "" ?>"></td>
+                        <td style="border-width:0px"><input id="sortie" name="sortie" type="number" min="0" value="<?= $sortie ?>"></td>
                     </tr>
                 </table>
                 <button class="btn btn-primary">Search</button><br><br>
