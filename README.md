@@ -2,7 +2,7 @@
 Hello, and welcome to the CAP EMS Readme! My name is 2dLt Tayler (TJ) Porter, and I am a member of the Missouri Wing.  I created the CAP EMS after being an MRO for the Wing ICP during a state-wide Search and Rescue Exercise.  During this exercise, I noticed it is easy to miss when one of the ten active sorties misses a check-in.  CAP EMS is used to track Air, Ground, and sUAS sorties and provide an easy-to-use dashboard that will provide a common operating picture for the IC, AOBD, GBD, CUL, and other stakeholders.
 
 ## Features
-### Missed Checkin Alerts
+### Missed Check-in Alerts
 The most useful feature, and the original purpose of CAP EMS, is to notify the CUL and MROs when a check-in is missed.  After 30 minutes of no recorded check-ins from a sortie, the sortie will be highlighted yellow. This is to show that sortie is due for check-in but is not yet cause for concern. After 35 minutes of no recorded check-ins from a sortie, the sortie will be highlighted red. This is to show that sortie is overdue for check-in and that MROs should attempt to make contact and request a sitrep.  These times can be customized by the Web Security Admin maintaining the system. A few possibilities are: 
   * warning and alarm after 60 and 65 minutes;
   * sorties go straight to red at 30 minutes;
