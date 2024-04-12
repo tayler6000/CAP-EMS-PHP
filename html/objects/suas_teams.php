@@ -29,7 +29,7 @@
             $this->mission = $row["mission"];
             $this->sortie = $row["sortie"];
             $this->name = $row["name"];
-            $this->gt_id = $row["ground_id"];
+            $this->gt_id = !empty($row["ground_id"]) ? $row["ground_id"] : null;
             $this->gt = null;
             if($this->gt_id !== null){
                 $this->gt = new GroundTeam($row["ground_id"]);
