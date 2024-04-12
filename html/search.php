@@ -79,9 +79,9 @@
                     }
                     $beautify = array("air"=>"Air", "ground"=>"Ground", "suas"=>"sUAS");
                     while($row = mysqli_fetch_assoc($result)){
-                        print("<a class='link' href='/audit.php?type=".$row["type"]."&id=".$row["id"]."'>".
+                        print("<a class='link' href='/audit.php?type=".$row["type"]."&id=".$row["id"]."'>Mission ".
                               $row["mission"]." / ".$beautify[$row["type"]]." Sortie ".$row["sortie"]."</a>: ".
-                              $row["name"]
+                              $row["name"]."<br>"
                         );
                     }
                     $conn->close();
