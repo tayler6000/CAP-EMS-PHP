@@ -358,6 +358,12 @@
                 </form>
             </div>
 
+            <br />
+            <hr />
+            <br />
+
+        <?php require("copyright.php"); ?>
+
         </div>
         <?php
             require("api/alert.php");
