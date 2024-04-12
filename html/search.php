@@ -53,7 +53,7 @@
                     $mission = $_GET["mission"];
                     $sortie = (int)$_GET["sortie"];
                     $mission_search = "%".$mission."%";
-                    $sortie_search = "%":
+                    $sortie_search = "%";
                     if($sortie !== 0){
                         $sortie_search = "%".$sortie."%";
                     }
