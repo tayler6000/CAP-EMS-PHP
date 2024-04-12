@@ -22,20 +22,26 @@
             <p id="time"></p>
             <h2>Search Sorties</h2>
             <form>
-                <label>
-                    Sortie Type:
-                    <select name="type">
-                        <option value="ground">Ground</option>
-                        <option value="air">Air</option>
-                        <option value="suas">sUAS</option>
-                    </select>
-                </label><br>
-                <label>
-                    Mission Number: <input name="mission" type="text">
-                </label><br>
-                <label>
-                    Sortie Number: <input name="mission" type="number" min="1">
-                </label><br>
+                <table>
+                    <tr>
+                        <td><label for="type">Sortie Type:</label></td>
+                        <td>
+                            <select id="type" name="type">
+                                <option value="ground">Ground</option>
+                                <option value="air">Air</option>
+                                <option value="suas">sUAS</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="mission">Mission Number:</label></td>
+                        <td><input id="mission" name="mission" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="sortie">Sortie Number:</label></td>
+                        <td><input id="sortie" name="sortie" type="number" min="1"></td>
+                    </tr>
+                </table>
                 <submit class="btn-primary">
             </form>
         </div>
