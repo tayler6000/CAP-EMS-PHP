@@ -1,6 +1,6 @@
 <?php
 
-$version = "1.0.0-beta";
+$version = "1.0.0";
 $semver_regex = "/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/";
 $ch = curl_init("https://api.github.com/repos/tayler6000/CAP-EMS-PHP/releases/latest");
 $headers = ["User-Agent: CAP EMS Server"];
