@@ -17,7 +17,8 @@ CREATE TABLE `audit` (
   `sortie_type` enum('ground','air','sUAS') NOT NULL,
   `sortie_id` int NOT NULL,
   `entry` text NOT NULL,
-  `timestamp` int NOT NULL
+  `timestamp` int NOT NULL,
+  `WMIRS` enum('true', 'false') NOT NULL DEFAULT 'false'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 ALTER TABLE `audit`

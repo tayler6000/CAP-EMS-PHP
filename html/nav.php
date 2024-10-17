@@ -14,6 +14,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/search.php">Search</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/WMIRS.php">WMIRS Entry</a>
+                </li>
             </ul>
         </div>
     </div>
