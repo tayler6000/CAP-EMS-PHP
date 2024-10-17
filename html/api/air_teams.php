@@ -1,6 +1,7 @@
 <?php
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
+    date_default_timezone_set(empty(getenv("TIMEZONE")) ? "Zulu" : getenv("TIMEZONE"));
     error_reporting(E_ALL);
     require_once("../objects/air_teams.php");
     $late_offset = get_air_late() * 60;

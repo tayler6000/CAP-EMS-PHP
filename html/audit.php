@@ -1,6 +1,7 @@
 <?php
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
+    date_default_timezone_set(empty(getenv("TIMEZONE")) ? "Zulu" : getenv("TIMEZONE"));
     error_reporting(E_ALL);
     if(!isset($_GET["type"]) or empty($_GET["type"]) or
        !isset($_GET["id"]) or empty($_GET["id"])){
